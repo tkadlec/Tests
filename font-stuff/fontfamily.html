@@ -1,0 +1,67 @@
+<html>
+<head>
+	<title>Font Family Test</title>
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<style type="text/css">
+		body {
+			
+		}
+		#changed{
+			font-family: "Helvetica Neue", Arial, sans-serif;
+		}
+	</style>
+</head>
+<body>
+	<p id="default">This page tests to see what the default font is on a system. </p>
+	<p id="changed">It also tests to see if we can programmatically determine which font is applied from a given font stack.</p>
+	<div id="test"></div>
+	<div id="results"></div>
+
+	<script type="text/javascript">
+	//use for browserscope
+	var _bTestResults = {};
+
+	function getStyle(oElm, strCssRule){
+		oElm = document.getElementById(oElm);
+	var strValue = "";
+	if(document.defaultView && document.defaultView.getComputedStyle){
+		strValue = document.defaultView.getComputedStyle(oElm, "").getPropertyValue(strCssRule);
+	}
+	else if(oElm.currentStyle){
+		strCssRule = strCssRule.replace(/\-(\w)/g, function (strMatch, p1){
+			return p1.toUpperCase();
+		});
+		strValue = oElm.currentStyle[strCssRule];
+	}
+	return strValue;
+}
+	window.onload = function() {
+		var test = document.getElementById('test');
+
+
+
+		_bTestResults['Default Font'] = getStyle('default', 'font-family') ? getStyle('default', 'font-family') : getStyle('default', 'fontFamily');
+
+		_bTestResults['Applied Font'] = getStyle('changed', 'font-family') ? getStyle('changed', 'font-family') : getStyle('changed', 'fontFamily');
+
+		var results	= document.getElementById('results');
+		results.innerHTML = '<p>Default font is ' + _bTestResults['Default Font'] + '.</p>';
+results.innerHTML += '<p>Applied font is ' + _bTestResults['Applied Font'] + '.</p>';	
+		// Fetch the Browserscope script that sucks the results from _bTestResults
+		// (function() {
+		// 	var _bTestKey = 'agt1YS1wcm9maWxlcnINCxIEVGVzdBic7MYQDA';
+		// 	var _bScript = document.createElement('script');
+		// 	_bScript.src = 'http://www.browserscope.org/user/beacon/' + _bTestKey;
+		// 	_bScript.setAttribute('async', 'true');
+		// 	var scripts = document.getElementsByTagName('script');
+		// 	var lastScript = scripts[scripts.length - 1];
+		// 	lastScript.parentNode.insertBefore(_bScript, lastScript);
+		// })();
+
+	}
+
+	
+	</script>
+</body>
+</html>

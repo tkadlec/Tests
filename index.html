@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Tests</title>
+        <style>
+            body {
+                font: 100%/1.4em "Helvetica Neue",Helvetica,Arial,sans-serif;
+                color: #404040;
+            }
+            h1 {
+                font-size: 2.5em;
+                border-bottom: 1px dotted #404040;
+                line-height: 1.4em;
+            }
+            a {
+                color: #404040;
+                text-decoration: none;
+                display: block;
+                padding: .5em;
+            }
+            a:hover{
+                background: #eee;
+            }
+            #wrap {
+                max-width: 40em;
+                margin: auto;
+            }
+            dl {
+                margin-top: 3em;
+            }
+            dt{
+                font-size: 2em;
+            }
+            dd{
+                margin: 0.5em 0 0em 0;
+                color: #666;
+            }
+            dl a{
+                margin-bottom: 1.5em;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+            <h1>Tests</h1>
+            <dl>
+                <a href="forms/datalist.html">
+                    <dt>Datalist + Autocomplete</dt>
+                    <dd>Testing how a browser displays datalist results combined with native browser autocomplete.</dd>
+                </a>
+                <a href="font-stuff/fontfamily.html">
+                    <dt>Default Font Family</dt>
+                    <dd>This page tests to see what the default font is on a system.</dd>
+                </a>
+                <a href="font-stuff/fontsize.html">
+                    <dt>Default Font Size</dt>
+                    <dd>Testing to see the default font-size when the body is set to 100%.</dd>
+                </a>
+                <a href="font-stuff/ff-download">
+                    <dt>Font-Face Downloads</dt>
+                    <dd>Testing to see how browsers download web fonts.</dd>
+                </a>
+                <a href="mobile/format-detect.html">
+                    <dt>Format detection meta tag</dt>
+                    <dd>Testing to see which browsers will turn off auto-formatting of phone numbers when the format-detection meta tag is present.</dd>
+                </a>
+                <a href="compression">
+                    <dt>Image Compression</dt>
+                    <dd>Attempting to test if images are compressed by the network.</dd>
+                </a>
+                <a href="position/fixed.html">
+                    <dt>Position:Fixed + 100% Width</dt>
+                    <dd>Position fixed meets Android. Mayhem ensues.</dd>
+                </a>
+                <a href="overflow/overflow-scroll.php">
+                    <dt>Scrolling</dt>
+                    <dd>Testing overflow:scroll behavior</dd>
+                </a>
+                <a href="mq-css">
+                    <dt>Stylesheet download prioritization</dt>
+                    <dd>Webkit, or at least some versions of it, appear to do some smart loading of stylesheets. If they don't apply, they are downloaded at the end of the page. This is just a simple check to see if that holds true for other browsers as well.</dd>
+                </a>
+                <a href="mq-svg">
+                    <dt>SVG: Embedded Media Queries</dt>
+                    <dd>Testing to see how browsers behave when media queries are embedded within SVG files.</dd>
+                </a>
+                <a href="viewport/vp-1.html">
+                    <dt>Viewport tests</dt>
+                    <dd>Checking to see reported widths when the viewport is set in a meta tag vs with device adaptation</dd>
+                </a>
+            </dl>
+        </div>
+
+    </body>
+</html>

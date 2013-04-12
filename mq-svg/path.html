@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>Media Queries in SVG</title>
+        <meta name="viewport" content="width=device-width" />
+        <style>
+        body {
+                font: 100%/1.4em "Helvetica Neue",Helvetica,Arial,sans-serif;
+                color: #404040;
+            }
+            h1{
+                line-height: 1.2em;
+            }
+        #wrap {
+            max-width: 40em;
+            margin: auto;
+        }
+        #test1{
+            display: block;
+            width: 200px;
+            height: 200px;
+            background: url(kiwi-mq-fill.svg) top left no-repeat;
+            background-size: contain;
+        }
+        #test2{
+            display: block;
+            width: 400px;
+            height: 400px;
+            background: url(kiwi-mq-fill.svg) top left no-repeat;
+            background-size: contain;
+        }
+
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+        <h1>Testing SVG Images with Embedded Media Queries</h1>
+        <p>Using an SVG image for a background. The SVG image contains a media query that change the color the ellipse if the image is below 200px wide.</p>
+        <h2>Width: 200px</h2>
+        <div id="test1"></div>
+
+        <h2>Width: 400px</h2>
+        <div id="test2"></div>
+
+    </body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Datalist + Autocomplete Test</title>
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<style type="text/css">
+        body {
+                font: 100%/1.4em "Helvetica Neue",Helvetica,Arial,sans-serif;
+                color: #404040;
+            }
+		div{
+			padding: 0;
+			margin: 0;
+			line-height: 1em;
+		}
+		#results{
+			border: 1px solid green;
+			padding: 10px;
+		}
+		#test{
+			height: 10em;
+		}
+	</style>
+</head>
+<body>	
+	<h1>Datalist behavior</h1>
+	<p>Apparently, in some browsers, the browser's default autocomplete gets added to any results returned by a datalist. Makes sense until you start seeing duplicate items in the list, in which case it gets confusing.</p>
+	<p>To see it in action, try submitting the form a few times with values from the datalist (Hotdog, Hotdog2, Hotdog3, Hotdog4, French Fries).</p>
+	<h2>Results</h2>
+	<ul>
+		<li><strong>Chrome 20+:</strong> Appends</li>
+		<li><strong>Chrome Mobile:</strong> Datalist not supported</li>
+		<li><strong>Firefox 4+:</strong> Prepends</li>
+		<li><strong>Opera 10+:</strong> Only shows datalist options</li>
+		<li><strong>IE 10:</strong> Only shows datalist options</li>
+		<li><strong>Safari:</strong> Datalist not supported</li>
+		<li><strong>Android:</strong> Datalist not supported</li>
+		<li><strong>iOS:</strong> Datalist not supported</li>
+	</ul>
+	<form action="" method="POST">
+		<input type="text" list="test" name="foo" id="foo" autocomplete="on"/>
+		<datalist id="test">
+			<option value="Hotdog">Hotdog</option>
+			<option value="Hotdog2">Hotdog2</option>
+			<option value="Hotdog3">Hotdog3</option>
+			<option value="Hotdog4">Hotdog4</option>
+			<option value="French Fries">French Fries</option>
+		</datalist>
+		<input type="submit" value="Go" />
+	</form>
+
+</body>
+</html>

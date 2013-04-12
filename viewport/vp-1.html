@@ -1,0 +1,123 @@
+<html>
+    <head>
+        <title>Viewport test: Meta</title>
+        <meta name="viewport" content="width=device-width" />
+        <style>
+        body {
+                font: 100%/1.4em "Helvetica Neue",Helvetica,Arial,sans-serif;
+                color: #404040;
+            }
+
+        #results{
+            margin-bottom: 4em;
+        }            #wrap {
+                max-width: 40em;
+                margin: auto;
+            }
+            @media screen and (min-width: 320px) {
+                .d400,
+                .d500,
+                .d600,
+                .d700,
+                .d768 {
+                    display: none;
+                }
+            }
+            @media screen and (min-width: 400px) {
+                .d320,
+                .d500,
+                .d600,
+                .d700,
+                .d768 {
+                    display: none;
+                }
+                .d400 {
+                    display: block;
+                }
+            }
+            @media screen and (min-width: 500px) {
+                .d320, 
+                .d400,
+                .d600,
+                .d700,
+                .d768 {
+                    display: none;
+                }
+                .d500 {
+                    display: block;
+                }
+            }
+            @media screen and (min-width: 600px) {
+                .d320, 
+                .d400,
+                .d500,
+                .d700,
+                .d768 {
+                    display: none;
+                }
+                .d600 {
+                    display: block;
+                }
+            }
+            @media screen and (min-width: 700px) {
+                .d320, 
+                .d400,
+                .d600,
+                .d500,
+                .d768 {
+                    display: none;
+                }
+                .d700 {
+                    display: block;
+                }
+            }
+            @media screen and (min-width: 768px) {
+                .d320, 
+                .d400,
+                .d600,
+                .d500,
+                .d700 {
+                    display: none;
+                }
+                .d768 {
+                    display: block;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+        <h1>Meta Tag</h1>
+
+        <div id="results">
+            <div class="d320"><strong>Applied:</strong> &gt;= 320px</div>
+            <div class="d400"><strong>Applied:</strong> &gt;= 400px</div>
+            <div class="d500"><strong>Applied:</strong> &gt;= 500px</div>
+            <div class="d600"><strong>Applied:</strong> &gt;= 600px</div>
+            <div class="d700"><strong>Applied:</strong> &gt;= 700px</div>
+            <div class="d768"><strong>Applied:</strong> &gt;= 768px</div>
+
+            <p id="screen-width"></p>
+            <p id="window-width"></p>
+
+        </div>
+        
+
+        <h2>Tests</h2>
+        <ul>
+            <li><a href="vp-1.html">Test with Meta Tag</a></li>
+            <li><a href="vp-2.html">Test with CSS Device Adaptation</a></li>
+            <li><a href="vp-3.html">Test with both CSS Device Adaptation and Meta Tag</a></li>
+        </ul>
+        </div>
+        <script>
+            window.onload =function () {
+                var theScreen = document.getElementById('screen-width');
+                theScreen.innerHTML = "<strong>screen.width:</strong> " + screen.width;
+
+                var theWindow = document.getElementById('window-width');
+                theWindow.innerHTML = "<strong>window.innerWidth:</strong> " + window.innerWidth;
+            }
+        </script>
+    </body>
+</html>

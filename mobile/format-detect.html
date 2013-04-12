@@ -1,0 +1,36 @@
+<html>
+<head>
+    <title>Suppressing auto-formatting of numbers as tel: links</title>
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <style type="text/css">
+        body {
+                font: 100%/1.4em "Helvetica Neue",Helvetica,Arial,sans-serif;
+                color: #404040;
+            }
+        div{
+            padding: 0;
+            margin: 0;
+            line-height: 1em;
+        }
+        #results{
+            border: 1px solid green;
+            padding: 10px;
+        }
+        #test{
+            height: 10em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Suppressing auto-formatting of numbers as tel: links</h1>
+    <p>The following meta tag has been added to the header to attempt to suppress auto-formatting of numbers as tel links:</p>
+    <p><code>&lt;meta name="format-detection" content="telephone=no" /&gt;</code></p>
+    
+    <p>555-555-5555</p>
+    <p>5555555555</p>
+    <p>555.555.5555</p>
+    <p>(555) 555-5555</p>
+</body>
+</html>

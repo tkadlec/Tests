@@ -1,0 +1,62 @@
+<html>
+<head>
+	<title>Testing image compression over mobile networks</title>
+    <meta name="viewport" content="width=device-width" />
+	<style type="text/css">
+	p#results { background-color: #ffa; border: solid 2px #d82; padding: 1em; position: absolute; width: 25%; overflow: hidden; white-space: pre;}
+p#results:hover { width: auto; }
+</style>
+</head>
+<body>
+	<h1>Testing image compression over mobile networks</h1>
+	
+    <form action="imgsize.php" method="post">
+    	<p>
+    		<label for="carrier">Carrier:</label><br>
+			<select id="carrier"name="carrier">  <option value="0" selected=""> 
+  </option><option value="28"> A1
+  </option><option value="1"> AT&amp;T
+  </option><option value="4"> BT
+  </option><option value="27"> Chunghwa Telecom
+  </option><option value="14"> Claro
+  </option><option value="22"> Elisa
+  </option><option value="26"> Mobitel SI
+  </option><option value="13"> Movistar
+  </option><option value="29"> Netcom
+  </option><option value="5"> Nextel
+  </option><option value="6"> O2
+  </option><option value="18"> O2 Telefonica CZ
+  </option><option value="19"> Optimus
+  </option><option value="15"> Optus
+  </option><option value="7"> Orange
+  </option><option value="23"> Saunalahti
+  </option><option value="21"> Siminn
+  </option><option value="8"> Sky
+  </option><option value="17"> Sonera
+  </option><option value="9"> Sprint
+  </option><option value="2"> T-Mobile
+  </option><option value="16"> T-Mobile UK
+  </option><option value="24"> Telia
+  </option><option value="25"> Three UK
+  </option><option value="20"> VIPnet
+  </option><option value="3"> Verizon
+  </option><option value="10"> Virgin Mobile
+  </option><option value="11"> Vodafone
+  </option><option value="999"> OTHER
+</option></select>
+		</p>
+		<p> 
+			<label for="connection">Connection Type:</label><br>
+			<select name="connection">
+				<option value="0">Don't know</option>
+				<option value="3">2G</option>
+				<option value="4">3G</option>
+				<option value="5">4G</option>
+				<option value="1">Wired</option>
+				<option value="2">Wifi</option>
+			</select>
+		</p>
+    	<p><input type="submit" value="runtest" /></p>
+    </form>
+</body>
+</html>

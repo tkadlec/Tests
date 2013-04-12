@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <title>Stylesheet download prioritiation</title>
+        <link rel="stylesheet" href="bootstrap.css">
+        <meta name="viewport" content="width=device-width" />
+        <style>
+            body { margin: 50px auto; max-width: 70em }
+            h1 {margin: .6em;}
+            p { font-size: 1.3em; font-weight: normal; line-height: 1.4; margin: 1em; }
+            table { width: 100% !important; margin: 1.3em; }
+        </style>
+        <link rel="stylesheet" media="screen and (min-width: 320px)" href="320.css" />
+        <link rel="stylesheet" media="screen and (min-width: 768px)" href="768.css" />
+        <link rel="stylesheet" media="screen and (min-width: 1024px)" href="1024.css" />
+        <link rel="stylesheet" media="screen and (min-width: 1800px)" href="1800.css" />
+    </head>
+    <body>
+        <h1>Stylesheet download prioritization</h1>
+
+        <p>Webkit, or at least some versions of it, appear to do some smart loading of stylesheets. If they don't apply, they are downloaded at the end of the page. This is just a simple check to see if that holds true for other browsers as well.</p>
+
+        <p><img src="http://placehold.it/350x150" /></p>
+
+         <div id="test">
+             
+         </div>
+
+         <table class="bordered-table zebra-striped">
+             <thead>
+                 <tr>
+                     <th>Browser</th>
+                     <th>Delayed</th>
+                 </tr>
+             </thead>
+             <tbody>
+                 <tr>
+                     <td>Chrome 23</td>
+                     <td><span class="label success">Delayed</span></td>
+                 </tr>
+                 <tr>
+                     <td>Firefox 17</td>
+                     <td><span class="label error">Not delayed</span></td>
+                 </tr>
+                 <tr>
+                     <td>Safari 4</td>
+                     <td><span class="label error">Not delayed</span></td>
+                 </tr>
+                 <tr>
+                     <td>Safari 6</td>
+                     <td><span class="label success">Delayed</span></td>
+                 </tr>
+             </tbody>
+         </table>
+         <script type="text/javascript" src="blah.js"></script>
+    </body>
+</html>

@@ -1,0 +1,83 @@
+<html>
+<head>
+	<title>Font Size Test</title>
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<style type="text/css">
+        body {
+                font: 100%/1.4em "Helvetica Neue",Helvetica,Arial,sans-serif;
+                color: #404040;
+            }
+		div{
+			padding: 0;
+			margin: 0;
+			line-height: 1em;
+		}
+		#results{
+			border: 1px solid green;
+			padding: 10px;
+		}
+		#test{
+			height: 10em;
+		}
+	</style>
+</head>
+<body>
+	<p>This page tests to see what font-size is used when the body is set to 100%. Testing font-size directly gives mixed results, as Opera Mini for example will return a %.</p>
+	<p>Instead, a div is included in the page and the height is set to 10em. The font-size is then calculated by taking the height of the div and dividing by 10.</p>
+	<div id="test"></div>
+	<div id="results"></div>
+
+	<script type="text/javascript">
+	//use for browserscope
+	var _bTestResults = {};
+
+	if (window.devicePixelRatio === undefined) {
+		_bTestResults['Pixel Ratio'] = 0;
+	} else {
+		//browserscope doesn't like decimals
+		_bTestResults['Pixel Ratio'] = window.devicePixelRatio * 10;
+	}
+	//getStyle function courtesy of PPK at http://www.quirksmode.org/dom/getstyles.html
+	function getStyle(el,styleProp)
+	{
+		var x = document.getElementById(el);
+		if (x.currentStyle)
+			var y = x.currentStyle[styleProp];
+		else if (window.getComputedStyle)
+			var y = document.defaultView.getComputedStyle(x,null).getPropertyValue(styleProp);
+		return y;
+	}
+	window.onload = function() {
+		var test = document.getElementById('test');
+
+		//checking the font size style directly isn't good enough
+		//Opera Mini, for example, will report 6%
+		//so instead, insert a div, set a height, then calculate from there
+		//use 10 since it's an easy multiplier
+
+		//divide to get size of 1em
+		var size= test.offsetHeight/10;
+
+		_bTestResults['Font Size (pixels)'] = size;
+
+		var results	= document.getElementById('results');
+		results.innerHTML = '<p>Font size is ' + size + 'px.</p>';
+
+		// Fetch the Browserscope script that sucks the results from _bTestResults
+		(function() {
+			var _bTestKey = 'agt1YS1wcm9maWxlcnINCxIEVGVzdBic7MYQDA';
+			var _bScript = document.createElement('script');
+			_bScript.src = 'http://www.browserscope.org/user/beacon/' + _bTestKey;
+			_bScript.setAttribute('async', 'true');
+			var scripts = document.getElementsByTagName('script');
+			var lastScript = scripts[scripts.length - 1];
+			lastScript.parentNode.insertBefore(_bScript, lastScript);
+		})();
+
+	}
+
+	
+	</script>
+</body>
+</html>

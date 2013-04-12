@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Position Fixed Madness</title>
+	<meta name="viewport" content="width=device-width" />
+	<style type="text/css">
+        body {
+            font: 100%/1.4em "Helvetica Neue",Helvetica,Arial,sans-serif;
+            color: #404040;
+        }
+		div{
+			padding: 0;
+			margin: 0;
+			line-height: 1em;
+		}
+		#results{
+			border: 1px solid green;
+			padding: 10px;
+		}
+		header{
+			background: #000;
+			color: #fff;
+			position: fixed;
+			top: 0;
+			left:0;
+			right: 0;
+			width: 100%;
+		}
+		h1{
+			margin-top: 2.2em;
+		}
+		@media screen and (orientation: portrait) {
+			header{
+				width: 100%;
+			}
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<h2>I should be 100% wide</h2>
+	</header>	
+	<h1>Position Fixed</h1>
+	<p>So many issues. But the one I'm specifically looking at here is Android 4.x.</p>
+	<h2>Steps</h2>
+	<ul>
+		<li>Double tap to zoom in</li>
+		<li>Change orientation</li>
+		<li>Change orientation again</li>
+		<li>Double tap to zoom out</li>
+		<li>Watch as header no longer fills width</li>
+		<li>Verbally curse Android native browser and cry</li>
+	</ul>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>Media Queries in SVG: Object Element</title>
+        <meta name="viewport" content="width=device-width" />
+        <style>
+        body {
+                font: 100%/1.4em "Helvetica Neue",Helvetica,Arial,sans-serif;
+                color: #404040;
+            }
+            h1{
+                line-height: 1.2em;
+            }
+        #wrap {
+            max-width: 40em;
+            margin: auto;
+        }
+
+
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+        <h1>Testing SVG Images with Embedded Media Queries: Object Element</h1>
+        <p>Using an SVG image in an <code>object</code> element. The SVG image contains a media query that hides the ellipse if the image is below 200px wide.</p>
+        <h2>Width: 200px</h2>
+        <object width="200px" height="164px" type="image/svg+xml" data="kiwi-mq.svg">
+          Kiwi Logo <!-- fallback image in CSS -->
+        </object>
+
+        <h2>Width: 400px</h2>
+        <object width="400px" height="318px" type="image/svg+xml" data="kiwi-mq.svg">
+          Kiwi Logo <!-- fallback image in CSS -->
+        </object>
+
+        <h2>Tests</h2>
+        <ul>
+            <li><a href="index.html">Media queries in SVG: Background</a></li>
+            <li><a href="img.html">Media queries in SVG: IMG</a></li>
+            <li><a href="inline.html">Media queries in SVG: Inline</a></li>
+            <li><a href="object.html">Media queries in SVG: OBJECT</a></li>
+        </ul>
+
+        
+    </body>
+</html>
