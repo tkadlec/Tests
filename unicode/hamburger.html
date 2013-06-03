@@ -1,0 +1,38 @@
+
+<html>
+	<head>
+		<title>Hamburger Icon test</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<style type="text/css">
+
+			#menu{
+				position: relative;
+			}
+			#menu a{
+				padding-left: 20px;
+			}
+			#menu a:before {
+				content: "";
+				position: absolute;
+				top: 30%;
+			    left:0px;
+			    width:12px;
+			    height:2px;
+			    border-top: 6px double #000;
+			    border-bottom: 2px solid #000;
+			}
+			#test:before{
+			    content: "\2630 ";
+			}​
+		</style>
+	</head>
+	<body>
+		<p id="menu"><a href="#">Menu</a> (CSS borders)​</p>
+		<p>&#9776; Menu (entity)</p>
+		<p>&#x2630; Menu (unicode)</p>
+		<p>☰ Menu (pasted in)</p>
+		<p id="test"><a href="#"> Menu</a> (CSS content using unicode)</p>
+		<p>&equiv; Menu (equiv entity)</p>
+	</body>
+</html>	
