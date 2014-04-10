@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>Trying to get chosen src with srcset applied</title>
+        <meta name="viewport" content="width=device-width" />
+        <style>
+        body {
+                font: 100%/1.4em "Helvetica Neue",Helvetica,Arial,sans-serif;
+                color: #404040;
+            }
+
+            #results{
+                margin-bottom: 4em;
+                margin-top: 5em;
+            }
+            #wrap {
+                    max-width: 40em;
+                    margin: auto;
+            }
+            
+        </style>
+
+    </head>
+    <body>
+        <div id="wrap">
+        <h1>Srcset funkiness</h1>
+        <p>A quick test shows that the returned value for the src attribute of an image using srcset is always what was passed to src, instead of what ultimately was chosen by the UA.</p>
+        <img src="test1.png" srcset="test2.png 2x, test3.png 1x" onLoad="imageLoaded(this)" />
+
+        <div id="results">
+            
+
+        </div>
+        <script>
+            function imageLoaded(image) {
+                var results = document.getElementById('results');
+                results.innerHTML += image.src + " has loaded.<br/>";
+            }
+        </script>
+    </body>
+</html>
