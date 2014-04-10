@@ -7,7 +7,10 @@
                 font: 100%/1.4em "Helvetica Neue",Helvetica,Arial,sans-serif;
                 color: #404040;
             }
-
+            h1{
+                margin: 2em;
+                border-bottom: 1px dotted #404040;
+            }
             #results{
                 margin-bottom: 4em;
                 margin-top: 5em;
@@ -23,7 +26,12 @@
     <body>
         <div id="wrap">
         <h1>Srcset funkiness</h1>
-        <p>A quick test shows that the returned value for the src attribute of an image using srcset is always what was passed to src, instead of what ultimately was chosen by the UA.</p>
+        <h2>Test Case</h2>
+        <p>An image is added to the page. Both the src and srcset attributes are used. Using the image load event, the src of the image is selected with JavaScript.</p>
+        <h2>Expected</h2>
+        <p>The src returned to JavaScript would be the src of the image chosen by the UA.</p>
+        <h2>Result</h2>
+        <p>The src returned to JavaScript is the source of the image as specified in the HTMl—regardless of what is actually requested and used.</p>
         <img src="test1.png" srcset="test2.png 2x, test3.png 1x" onLoad="imageLoaded(this)" />
 
         <div id="results">
