@@ -20,6 +20,10 @@
                     max-width: 40em;
                     margin: auto;
             }
+            .update{
+                background: #eee;
+                padding: .5em;
+            }
             
         </style>
 
@@ -27,6 +31,9 @@
     <body>
         <div id="wrap">
         <h1>Srcset funkiness</h1>
+        <div class="update">
+            <p>Sounds like the plan is to have currentSrc available with the selected image. The test case has been updated to look for that property as well, just to seen when implemented and where.</p>
+        </div>
         <h2>Test Case</h2>
         <p>An image is added to the page. Both the src and srcset attributes are used. Using the image load event, the src of the image is selected with JavaScript.</p>
         <h2>Expected</h2>
@@ -42,7 +49,8 @@
         <script>
             function imageLoaded(image) {
                 var results = document.getElementById('results');
-                results.innerHTML += image.src + " has loaded.<br/>";
+                results.innerHTML += "<strong>src: </strong>" + image.src + " has loaded.<br/>";
+                results.innerHTML += "<strong>currentSrc: </strong>" + image.currentSrc + " has loaded.<br/>";
             }
         </script>
     </body>
