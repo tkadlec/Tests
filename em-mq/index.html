@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width" />
+        <title>Em-based Media Query Behavior</title>
+        <style>
+            body {
+                font: 150%/1.4em "Helvetica Neue",Helvetica,Arial,sans-serif;
+                color: #404040;
+            }
+            @media screen and (min-width: 640px) {
+                #test {
+                    color: white;
+                }
+            }
+            @media screen and (min-width: 40em) {
+                #test {
+                    background: black;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+            <h1>Em-based media query behavior</h1>
+            <p>Comparing em and px based media queries for fun and profitz (not really profitz).</p>
+            <p>Using two media queries to change font color (640px) and background color (40em—the em equivalent of 640px).</p> 
+            <div id="test">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate deleniti delectus omnis numquam accusantium expedita aut provident dignissimos odio tenetur et vero aperiam doloribus modi mollitia excepturi accusamus ut nisi!</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam consequatur voluptatibus architecto consectetur facilis repellendus nam labore harum iure eius commodi porro voluptas! Atque placeat vitae. Fugiat nam non quisquam.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam consequatur voluptatibus architecto consectetur facilis repellendus nam labore harum iure eius commodi porro voluptas! Atque placeat vitae. Fugiat nam non quisquam.</p>
+            </div>
+        </div>
+
+    </body>
+</html>

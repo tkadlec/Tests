@@ -1,0 +1,91 @@
+<html>
+<head>
+    <title>Testing the impact of image scaling</title>
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <style type="text/css">
+        body {
+                font: 100%/1.4em "Helvetica Neue",Helvetica,Arial,sans-serif;
+                color: #404040;
+            }
+        .image{
+            width: 200px;
+            float: left;
+        }
+        img{
+            width: 100%;
+            max-width: 100%;
+        }
+        .menu, .menu li{
+            list-item-type: none;
+            padding-left: 0;
+            margin-left: 0;
+        }
+        .menu li{
+            display: inline;
+            margin-right: 3em;
+        }
+    </style>
+</head>
+<body>
+    <ul class="menu">
+        <li><a href="index.html">Large Size</a></li>
+        <li><a href="double.html">Double Size</a></li>
+        <li><a href="resized.html">Appropriate Size</a></li>
+    </ul>
+    <h1>Testing the impact of image scaling: Large Sized</h1>
+    <p>The images below are large images (1200px wide). The browser scales them down to 200px.</p>
+    <input id="add" type="button" value="Add ten more images" />
+    <h2>Image count: <span id="count">10</span></h2>
+    
+    <div class="image"><img src="img/image1.jpg" alt=""></div>
+    <div class="image"><img src="img/image2.jpg" alt=""></div>
+    <div class="image"><img src="img/image3.jpg" alt=""></div>
+    <div class="image"><img src="img/image4.jpg" alt=""></div>
+    <div class="image"><img src="img/image5.jpg" alt=""></div>
+    <div class="image"><img src="img/image6.jpg" alt=""></div>
+    <div class="image"><img src="img/image7.jpg" alt=""></div>
+    <div class="image"><img src="img/image8.jpg" alt=""></div>
+    <div class="image"><img src="img/image9.jpg" alt=""></div>
+    <div class="image"><img src="img/image10.jpg" alt=""></div>
+    
+    <script type="text/javascript">
+        var prefix = 'img/';
+        var imgCount = 10;
+
+        var images = [
+            'image1.jpg',
+            'image2.jpg',
+            'image3.jpg',
+            'image4.jpg',
+            'image5.jpg',
+            'image6.jpg',
+            'image7.jpg',
+            'image8.jpg',
+            'image9.jpg',
+            'image10.jpg',
+        ];
+
+        var add = document.getElementById('add');
+        var count = document.getElementById('count');
+
+        add.onclick = function(){
+            for (var i = images.length - 1; i >= 0; i--) {
+                var image = new Image();
+                var ts = new Date().getTime();
+                image.src = prefix + images[i] + '?' + ts;
+                var div = document.createElement('div');
+                div.className = 'image';
+                div.appendChild(image);
+                document.body.appendChild(div);
+
+
+            };
+            //updateCount
+            imgCount += 10;
+            count.innerHTML = imgCount;
+        }
+    </script>
+</body>
+</html>
