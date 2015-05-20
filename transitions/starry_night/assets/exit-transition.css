@@ -1,0 +1,21 @@
+/* Copyright 2014 The Chromium Authors. All rights reserved.
+ * Use of this source code is governed by a BSD-style license that can be
+ * found in the LICENSE file. */
+
+@-webkit-keyframes animateLogo {
+  from { }
+  to {
+    left: 0.6px;
+    top: 100.199999809265137px;
+    width: 73.19999885559082px;
+    height: 25.59999942779541px;
+    opacity: 0;
+  }
+}
+
+
+
+* {
+	opacity: .5;
+  	transition: opacity inherit;
+}

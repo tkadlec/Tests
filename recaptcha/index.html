@@ -1,0 +1,31 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Recaptcha test</title>
+</head>
+<body>
+	<h1>Trying to undo focus</h1>
+	<p>Recaptcha sets focus on element, which makes IE11 lose any sort of placeholder text. With no label in place, that's a big no-no.</p>
+	<form action="">
+		<div id="g-recaptcha" data-sitekey="6LcvtwITAAAAAJfftYgxP55P4SBwBB6HgKu7gTy5"></div>
+	</form>
+	<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
+	<script type="text/javascript">
+
+                var widgetId1;
+                var widgetId2;
+                var widgetId3;
+                var widgetId4;
+                var widgetId5;
+                var onloadCallback = function () {
+                    // Renders the HTML element with id 'example1' as a reCAPTCHA widget.
+                    // The id of the reCAPTCHA widget is assigned to 'widgetId1'.
+                        widgetId1 = grecaptcha.render('g-recaptcha', {
+                            'sitekey': '6LcvtwITAAAAAJfftYgxP55P4SBwBB6HgKu7gTy5'
+                        });
+
+                        console.info(widgetId1);
+                };
+        </script>
+</body>
+</html>

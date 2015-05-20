@@ -1,0 +1,76 @@
+body {
+	font: 100%/1.5em "Helvetica Neue",Helvetica,Arial,sans-serif;
+	color: #404040;
+}
+h1, h2 {
+	font-size: 2.5em;
+	border-bottom: 1px dotted #404040;
+	line-height: 1.4em;
+}
+a {
+	color: #0088cc;
+	text-decoration: none;
+}
+a:hover{
+	color: #005580;
+	text-decoration: underline;
+}
+dl a, ul.link-list a {
+	color: #404040;
+	text-decoration: none;
+	display: block;
+	padding: .5em;
+}
+dl a:hover, ul.link-list a:hover{
+	background: #eee;
+}
+#wrap {
+	max-width: 40em;
+	margin: auto;
+}
+dl {
+	margin-top: 3em;
+}
+dt{
+	font-size: 2em;
+}
+dd{
+	margin: 0.5em 0 0em 0;
+	color: #666;
+}
+dl a{
+	margin-bottom: 1.5em;
+}
+ul.link-list, ul.link-list li{
+	list-style-type: none;
+	margin-left: 0;
+	padding-left: 0;
+}
+ul.link-list{
+	margin-top: 3em;
+}
+ul.link-list li{
+	font-size: 2em;
+}
+
+.striped{
+	max-width: 100%;
+	width: 100%;
+	border-collapse: collapse;
+	border-spacing: 0;
+	margin-top: 3em;
+}
+.striped th, .striped td{
+	font-weight: bold;
+	padding: .5em;
+	line-height: 1.25em;
+	vertical-align: top;
+	border-top: 1px solid #ddd;
+	text-align: left;
+}
+.striped td{
+	font-weight: normal;
+}
+.striped tbody > tr:nth-child(odd) > td, .striped tbody > tr:nth-child(odd) > th {
+	background-color: #f9f9f9;
+}

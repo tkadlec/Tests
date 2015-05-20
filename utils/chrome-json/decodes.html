@@ -1,0 +1,92 @@
+<html>
+	<head>
+		<title>Parse JSON</title>
+	</head>
+	<body>
+	Attempting to parse Chrome JSON	
+
+		<div id="results">
+			
+		</div>
+	</body>
+	<script type="text/javascript" src="reqwest.js"></script>
+	<script>
+	var totalDecodes = 0,
+		totalTime = 0,
+		totalCount = 0;
+
+	var chromeParser = {
+		config: {
+			jData: ''
+		},
+		getDecodes: function() {
+			var self = this,
+				count = 0,
+				runningTotal = 0,
+				JSON = self.config.jData,
+				childs = '',
+				grandChild = '',
+				decodes = [],
+				type = 'Decode Image';
+			console.info(JSON);
+			for (var i = JSON.length - 1; i >= 0; i--) {
+				
+				//first generation
+				childs = JSON[i];
+				console.info(childs);
+				if (childs.name == type) {
+					decodes[] = childs;
+					
+				}
+					//second generation
+					// if (childs[j].type == 'Paint') {
+
+					// 	if (childs[j].children.length > 0) {
+					// 		//now loop for decode
+					// 		grandChild = childs[j].children;
+
+					// 		for (var k = grandChild.length - 1; k >= 0; k--) {
+					// 			if (grandChild[k].type == 'DecodeImage') {
+					// 				count++;
+					// 				runningTotal += (grandChild[k].endTime - grandChild[k].startTime);
+					// 			}
+					// 		};
+					// 	}
+					// }
+				};
+			return new Array(count, runningTotal);
+		},
+
+		init : function(url) {
+			var self = this,
+			decodes = '',
+			results = document.getElementById('results');
+
+			reqwest(url, function (resp) {
+				totalCount++;
+				self.config.jData = resp;
+				decodes = self.getDecodes();
+				totalDecodes += decodes[0];
+				totalTime += decodes[1];
+
+				results.innerHTML += decodes[0] + " decodes for a total of " + decodes[1] + "ms<br/>";
+
+			});
+		}
+	}
+	var profileCount = 1;
+	while (profileCount <= 4) {
+		chromeParser.init('may-2015/chrome42/noscale-' + profileCount + '.json');
+		profileCount++;
+	}
+	setTimeout(function() {
+		var results = document.getElementById('results');
+		results.innerHTML += '<p>AVERAGES:<br/>';
+		results.innerHTML += 'Decode Count: ' + totalDecodes / totalCount + '<br/>';
+		results.innerHTML += 'Time: ' + totalTime / totalCount + '<br/>';
+	}, 2000);
+	
+
+
+	</script>
+</html>

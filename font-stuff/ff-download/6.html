@@ -1,0 +1,98 @@
+<html>
+    <head>
+        <title>Font Stacks Test Five: Font-face loaded inline but unused in critical, only applied in async'd CSS</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+        <style type="text/css">
+            body{
+              font-family: Helvetica, Arial, sans-serif;
+            }
+            #test{
+                width: auto;
+                height: auto;
+                margin: 0;
+                padding: 0;
+                border: 1px solid pink;
+            }
+            #results{
+                border: 1px solid #ccc;
+                padding: 1em;
+            }
+            .loaded{
+                color: green;
+            }
+            .noload{
+                color: red;
+            }
+            
+            
+            @font-face {
+                font-family: 'OrbitronLight-NS';
+                src: url('http://stevesouders.com/bin/resource.cgi?type=font&sleep=2&t=1423759847') format('truetype');
+                font-weight: normal;
+                font-style: normal;
+
+            }
+            
+        </style>
+        <script type="text/javascript">
+        /*!
+loadCSS: load a CSS file asynchronously.
+[c]2014 @scottjehl, Filament Group, Inc.
+Licensed MIT
+*/
+function loadCSS( href, before, media, callback ){
+    "use strict";
+    // Arguments explained:
+    // `href` is the URL for your CSS file.
+    // `before` optionally defines the element we'll use as a reference for injecting our <link>
+    // By default, `before` uses the first <script> element in the page.
+    // However, since the order in which stylesheets are referenced matters, you might need a more specific location in your document.
+    // If so, pass a different reference element to the `before` argument and it'll insert before that instead
+    // note: `insertBefore` is used instead of `appendChild`, for safety re: http://www.paulirish.com/2011/surefire-dom-element-insertion/
+    var ss = window.document.createElement( "link" );
+    var ref = before || window.document.getElementsByTagName( "script" )[ 0 ];
+    var sheets = window.document.styleSheets;
+    ss.rel = "stylesheet";
+    ss.href = href;
+    // temporarily, set media to something non-matching to ensure it'll fetch without blocking render
+    ss.media = "only x";
+    ss.onload = callback || function() {};
+    // inject link
+    ref.parentNode.insertBefore( ss, ref );
+    // This function sets the link's media back to `all` so that the stylesheet applies once it loads
+    // It is designed to poll until document.styleSheets includes the new sheet.
+    function toggleMedia(){
+        var defined;
+        for( var i = 0; i < sheets.length; i++ ){
+            if( sheets[ i ].href && sheets[ i ].href.indexOf( href ) > -1 ){
+                defined = true;
+            }
+        }
+        if( defined ){
+            ss.media = media || "all";
+        }
+        else {
+            setTimeout( toggleMedia );
+        }
+    }
+    toggleMedia();
+    return ss;
+}
+loadCSS('blah.css');
+        </script>
+    </head>
+    <body>
+        <h1>Testing @font-face downloads</h1>
+        <p>This test loads a @font-face and then only uses it within a min-width: 100px media query. This test is to see how @font-face assets get downloaded if the media query applies.</p>
+        <p id="experiment">This is the guinea pig.</p>
+
+        <h2>Tests</h2>
+        <ul>
+            <li><a href="index.html">Unused Font-Face, no Media Query</a></li>
+            <li><a href="2.html">Font-Face used in media query that doesn't apply</a></li>
+            <li><a href="3.html">Font-Face used in media query that does apply</a></li>
+            <li><a href="4.html">Font-Face loaded in query that applies, used in one that doesn't</a></li>
+            <li><a href="4.html">Font-Face loaded and applied, but element is display:none</a></li>
+        </ul>
+    </body>
+</html>

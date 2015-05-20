@@ -1,0 +1,41 @@
+p#logo {
+  left: inherit;
+  right: 8%;
+  }
+h1#logo, h1 {
+  position:relative;
+  left: -2%;
+  }
+.content {
+  padding-top: 96px;
+  /* padding-top: 126px; /* Only during workshop promo */
+  }
+.maincontent {
+  width: 54.5%;
+  margin-left: 12.5%;
+  padding: 1px 2%;
+  }
+.intro {
+  margin-left: 12.5%;
+  margin-right: 12.5%;
+  }
+.dateloc {
+  margin-left: 12.5%;
+  width: 58%;
+  }
+aside {
+  position: absolute;
+  top: 19em;
+  right: 0;
+  width: 26.5%;
+  margin-right: 0;
+  }
+  .home aside {
+    top: 36em;
+    }
+#speakers {
+  position: absolute;
+  top: 13em;
+  right: 10%;
+  width: 36%;
+  }

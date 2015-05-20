@@ -1,0 +1,190 @@
+/*
+@font-face {
+    font-family: 'CodeBoldRegular';
+    src: url('type/code_bold-webfont.eot');
+    src: local('☺'), url('type/code_bold-webfont.woff') format('woff'), url('type/code_bold-webfont.ttf') format('truetype'), url('type/code_bold-webfont.svg#webfont0wQYhRm3') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'CodeLightRegular';
+    src: url('type/code_light-webfont.eot');
+    src: local('☺'), url('type/code_light-webfont.woff') format('woff'), url('type/code_light-webfont.ttf') format('truetype'), url('type/code_light-webfont.svg#webfontlAD2DpIv') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+    */
+body {
+    margin: 0 auto;
+    width: 96%;
+}
+.content {
+    position: relative;
+    padding-bottom: 2em;
+    min-height: 600px;
+}
+.skiptonav {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+}
+h1 { 
+    /* font-family: 'CodeLightRegular'; */ 
+    font-family: 'Helvetica Neue Light', 'HelveticaNeue-Light', Arial, Helvetica, sans-serif; 
+    font-weight: normal;
+    margin-left: 0;
+}
+.figure { float: left; }
+.figure.right { float: right; }
+.mobileimportant {
+    display: none;
+}
+.speaker { 
+	overflow:hidden; 
+	clear: left; 
+	border-top: 4px solid #C0B8B4;
+}
+thead tr {
+    border-bottom: 1px solid #c0b8b4;
+}
+.activities {
+    border-bottom: none;
+    padding: 0;
+}
+    .activities h2 {
+        margin-top: 0;
+    }
+    .activities article {
+        padding: 1.5em;
+        background-color: #f8f5f2;
+    }
+    #conferences {
+        float: left;
+        border-right: 4px solid #c0b8b4;
+    }
+    #workshops {
+        float: right;
+    }
+    #conferences,
+    #workshops {
+        border-bottom: 4px solid #c0b8b4;
+        width: 41%;
+    }
+.maincontent {
+    clear: both;
+}
+    .home .maincontent {
+        padding-top: 1px;
+    }
+
+header {
+    text-align: left;
+    padding-left: 1.5em;
+}
+    header img {
+        width: 260px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+.feature>h2 {
+    font-family: 'CodeLightRegular';
+    position: static;
+    padding: 0 1em;
+    margin-bottom: 0;
+}
+nav {
+    font-size: 0.857em;
+    letter-spacing: 2px;
+    background-color: transparent;
+    margin: inherit;
+    padding: inherit;
+}
+nav .nav {
+    position: absolute;
+    top: 20px;
+    left: 66.0732984293194%;
+}
+    nav li { 
+        line-height: 1.5; 
+    }
+    nav a,
+    nav a:link,
+    ul.nav a:visited,
+    nav a:visited {
+        text-decoration: none;
+        color: #f18e00;
+    }
+    ul.nav li.current a,
+    ul.nav a:hover,
+    ul.nav a:active {
+        color: #3e374a;
+        background-color:transparent;
+    }
+    ul.nav li,
+    .sub li {
+        background-image: none;
+        border: none;
+    }
+    .sub {
+        padding: 0;
+        background-color: #f18e00;
+        box-shadow: 4px 4px 0px #c0b8b4;
+    }        
+        .sub h2 {
+            background-color: #3e374a;
+            color: white;
+            font: 1em Helvetica, Arial, sans-serif;
+            text-transform: uppercase;
+            line-height: 2;
+            margin-top: 0;
+            padding-left: 1em;
+        }
+        .sub a {
+            padding-bottom: .75em;
+        }
+        .sub a:link,
+        .sub a:visited {
+            color: #f2d9b6;
+            background-color:transparent;
+        }
+        .sub li.current a,
+        .sub a:hover,
+        .sub a:active {
+            color: white;
+        }
+form input,
+form textarea {
+    width: 50%;
+}
+footer {
+    margin-bottom: -2em;
+}
+@media only screen and (min-width: 1110px) {
+    footer a {
+        display: inline-block;
+    }
+    footer a {
+        margin: .5em 1em;
+    }
+        footer a#lanyrd,
+        footer a#nokia,
+		footer a#webdesigner {
+			height: 40px;
+		}
+        footer a#lanyrd {
+            background-position: left 16px;
+        }
+        footer a#nokia {
+            background-position: left 14px;
+        }
+		footer a#webdesigner {
+			background-position; top 7px;
+		}
+}
+#day1, #day2 {
+	width: 48%;
+	float: left;
+	margin-bottom: 3em;
+}
+#day2 { float: right; }
+

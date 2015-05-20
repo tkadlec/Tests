@@ -1,0 +1,624 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>KeepVid: Download online videos from Youtube, Vimeo, Twitch.Tv, Facebook, Dailymotion, Youku, Tudou, Metacafe and more!</title>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<meta name="description" content="Download online videos from Youtube, Vimeo, Twitch.Tv, Facebook, Dailymotion, Youku, Tudou, Metacafe and more. Simply copy and paste."><meta name="keywords" content="keepvid, download youtube videos, youtube downloader, download online videos, download streaming videos"><meta name="robots" content="All,index,follow"><meta name="revisit-after" content="7 days">
+<link rel="shortcut icon" href="http://keepvid.com/favicon.ico" />
+<style type="text/css">
+*{margin:0;padding:0;font-family:Tahoma,Verdana,sans-serif;font-size:12px;line-height:16px;color:#565656;}
+h3{font-size:13px;margin-bottom:9px;color:#bbb;}
+li{margin-left:40px}
+a{text-decoration:none;color:#5698d4;}
+a:hover{cursor:pointer;cursor:hand;text-decoration:underline;}
+
+.header-strip{height:60px;background-color:#335280;width:100%;}
+.header-inner{margin:0 auto;width:900px;}
+.header-logo{float:left;background:url('images/logo-new.png') center no-repeat;height:60px;width:146px;text-indent:-1000px;overflow:hidden;}
+.header-menu{float:right;list-style-type:none;border-left:1px solid #466694;border-right:1px solid #233c61;}
+.header-tab{float:right;margin-left:0px;}
+.header-tab a{display:block;color:#fff;font-size:16px;padding:0 10px;font-weight:bold;font-family:Trebuchet MS;text-decoration:none;line-height:60px;height:60px;border-left:1px solid #233c61;border-right:1px solid #466694;-webkit-transition:all .2s ease-in-out;-moz-transition:all .2s ease-in-out;-ms-transition:all .2s ease-in-out;-o-transition:all .2s ease-in-out;}
+.header-tab a:hover{background-color:#233c61;border-left:1px solid #233c61;border-right:1px solid #233c61;}
+.header-social img{border:0;margin-top:13px;}
+
+.dlbar-strip{line-height:60px;background-color:#eee;width:100%;}
+.dlbar-inner{margin:0 auto;width:900px;}
+
+.content{margin:0 auto;width:900px;}
+
+.bookmarklet{cursor:move;padding:6px 8px;background:#eee;color:#333;text-decoration:none;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;}
+.bookmarklet:hover{cursor:move;text-decoration:none;}
+.bookmarklet-howto li{line-height:20px;}
+
+.us-browsericon{height:16px;width:16px;margin-bottom:-4px;padding-right:3px;}
+.userscript-icon{height:16px;width:16px;margin-bottom:-4px;padding-right:3px;}
+.userscript-howto li{line-height:20px;}
+
+.dlbar-table{padding:5px;width:870px;}
+.dlbar-table tr td{padding:5px;}
+#dlbar-width{border:1px solid #aeaeae;padding:5px;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;}
+#dlbar-code{border:1px solid #aeaeae;padding:5px;width:780px;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;}
+#dlbar-code:hover{cursor:text;}
+
+.e, .f{-webkit-appearance:none;-moz-border-radius:0;-webkit-border-radius:0;border-radius:0;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box;padding:3px 6px;display:inline;background:0;margin:0;margin:15px 0;line-height:26px;height:28px;font-size:12px;}
+.e{border:1px solid #aeaeae;background-color:#fff;border-right:none;width:100%;-webkit-border-top-left-radius: 3px;-webkit-border-bottom-left-radius:3px;-moz-border-radius-topleft:3px;-moz-border-radius-bottomleft:3px;border-top-left-radius:3px;border-bottom-left-radius:3px;}
+.f{float:right;background:#565656;border:1px solid #565656;color:#fff;width:105px;font-weight:bold;-webkit-border-top-right-radius: 3px;-webkit-border-bottom-right-radius:3px;-moz-border-radius-topright:3px;-moz-border-radius-bottomright:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;}
+.f:hover{cursor:pointer;cursor:hand;background:#787878;border:1px solid #787878;}
+.f::-moz-focus-inner{padding:0;border:0;}
+.g{padding-right:132px;margin-bottom:10px;}
+
+.adtop-inner{margin:0 auto;width:900px;}
+.ada, .adc{display:block;background:url('images/adbars.png') center no-repeat;width:750px;margin:0 auto;height:14px;}
+.ada{background-position:0px 0px;}
+.adc{background-position:0px -15px;margin-bottom:10px;}
+.adb{height:90px;text-align:center;}
+.add{float:right;}
+
+.h{margin:0 auto;width:900px;}
+.h-inner{float:left;width:880px;padding:10px;border:1px solid #ddd;margin-bottom:10px;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;}
+.h-inner h2{display:block;text-align:center;color:#444;font-size:18px;border-bottom:1px solid #ddd;margin-bottom:10px;padding-bottom:10px;}
+.h-inner h3{color:#4F76B1;font-size:15px;margin-bottom:10px;}
+.h-inner p{margin-bottom:10px;}
+
+.updates tr td{padding:2px 4px;}
+.updates tr .ut{font-weight:bold;}
+.updates tr .ui{height:16px;width:16px;margin-bottom:-4px;padding-right:3px;}
+.sites-column{float:left;margin-right:30px;}
+.sites-site{padding:5px 0;}
+.sites-site .hi{height:16px;width:16px;margin-bottom:-4px;padding-right:3px;}
+
+.pr{display:block;margin-bottom:10px;}
+.pr,.pr b{color:#777;}
+#applets div{display:inline;height:1px;}
+#dl{float:left;min-width:520px;min-width:490px;}
+#dl a{text-decoration:underline;}
+#instructs{color:#c33;}
+.smsg{float:left;width:100%;}
+#nl{clear:left;line-height:16px;}
+.j{max-width:520px;}
+#info a{text-decoration:none;}
+.substrans{height:200px;overflow:scroll;overflow-x:hidden;}
+.ld{margin:0 5px -2px 0;}
+.l{color:#52b27f;font-weight:bold;line-height:16px;}
+.m{float:left;height:50px;width:70px;margin-right:5px;border:0;}
+.n{text-decoration:none;color:#565656;font-weight:bold;font-size:13px;}
+.n:hover{text-decoration:underline;color:#565656;}
+.p,.q{color:#999;}
+.dn{text-align:center;margin-bottom:20px;}
+
+.switches{text-align:center;margin:0;padding:0;margin-top:10px;margin-bottom:50px;}
+.switches li{display:inline;list-style:none;margin:0 3px;}
+
+.footer-strip{clear:both;background:#555;padding:10px 0;width:100%;position:fixed;bottom:0;left:0;}
+.footer-inner{color:#ddd;margin:0 auto;width:900px;}
+.footer-inner .footer-menu{clear:both;float:right;margin:0;padding:0;}
+.footer-inner .footer-menu li{display:inline;list-style:none;margin:0 3px;}
+.footer-inner .footer-menu li a{text-decoration:none;color:#eee;}
+.footer-inner .footer-menu li a:hover{text-decoration:underline;color:#eee;}
+
+.stats{height:1px;width:1px;overflow:hidden;}
+
+#ce-d,#ce-u,#ce-r{display:none;}
+#z{display:none;width:530px;height:180px;margin-bottom:10px;border:1px solid #eee;}
+#javaon, #javaoff, #logon, #logoff, #showsizeon, #showsizeoff{display:none;font-weight:bold;}
+#javaon, #logon, #showsizeon{color:#1ba8e0;}
+#javaoff, #logoff, #showsizeoff{color:#e01b3c;}
+#javaoff{display:inline;}#logoff{display:inline;}#showsizeoff{display:inline;}/*
+.ws-outer{font-family:Lato,Arial,Helvetica,sans-serif;font-size:14px;width:890px;height:110px;margin-bottom:10px;padding:5px;background:#335280;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;}
+
+.ws-left{float:left;width:340px;margin-left:10px;}
+.ws-left .ws-title{margin-top:10px;}
+.ws-brand{font-family:Lato,Arial,Helvetica,sans-serif;font-size:14px;line-height:16px;font-weight:bold;color:#fff;}
+.ws-product{font-family:Lato,Arial,Helvetica,sans-serif;font-size:34px;line-height:38px;font-weight:bold;color:#fff;}
+.ws-desc{font-family:Lato,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#fff;margin-top:5px;}
+.ws-desc strong{color:#fff60e;font-family:Lato,Arial,Helvetica,sans-serif;font-size:18px;}
+
+.ws-mid{float:left;width:380px;}
+.ws-seeimg{float:left;display:block;}
+.ws-image{}
+.ws-seehow{font-family:Lato,Arial,Helvetica,sans-serif;font-size:14px;font-weight:bold;margin-left:25px;line-height:110px;color:#fff;text-decoration:none;}
+.ws-seehow:hover{color:#fff;text-decoration:underline;}
+
+.ws-right{float:left;width:150px;margin-right:10px;}
+
+.ws-btn-try {font-family:Lato,Arial,Helvetica,sans-serif;font-size:14px;float:right;margin-top:7px;text-decoration:none;background:#6cc118; color:#fff; border-radius:7px; box-shadow:0 1px 1px #666; line-height:40px; position:relative; display:inline-block;padding:0 60px 0 15px;font-weight:bold;-webkit-transition:all 0.3s;-moz-transition:all 0.3s;transition:all 0.3s;}
+.ws-btn-try span {display:inline-block;position:absolute;top:0;right:0;padding:10px;border-left:1px solid #529c09;}
+.ws-btn-try:hover {background:#78cb25;text-decoration:none;}
+
+.ws-btn-buy{font-family:Lato,Arial,Helvetica,sans-serif;font-size:14px;float:right;margin-top:15px;text-decoration:none;background:#f75a50; color:#fff; border-radius:7px; box-shadow:0 1px 1px #666; line-height:40px; display:inline-block; padding-left:15px; font-weight:bold; -webkit-transition: all 0.3s;-moz-transition: all 0.3s;transition: all 0.3s;}
+.ws-btn-buy:hover{background:#fd3225; text-decoration:none;}
+.ws-btn-buy span{font-family:Lato,Arial,Helvetica,sans-serif;font-size:14px;display:inline-block; padding:0 10px; margin-left:10px; border-left:1px solid #de5148;color:#fff;}
+.ws-btn-buy span del{font-size:12px; font-weight:normal;}
+*/
+</style>
+<link rel="stylesheet" type="text/css" href="/userscript/empty.css">
+<!--
+<link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="/js/shadowbox/shadowbox.css">
+<script type="text/javascript" src="/js/shadowbox/shadowbox.js"></script>
+<script type="text/javascript">
+Shadowbox.init();
+</script>
+-->
+<!--<script type="text/javascript" src="/js/zeroclipboard/ZeroClipboard.min.js"></script>
+<script type="text/javascript">
+ZeroClipboard.config({swfPath:"/js/zeroclipboard/ZeroClipboard.swf",forceHandCursor: true,autoActivate:true});
+</script>-->
+<script type="text/javascript">
+if (parent.frames.length > 0) {window.top.location.href = location.href;};
+//window.onload=function(){document.getElementById("url").focus();};
+var d=document;
+var sa="Save link as...";
+var ua="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36";
+var jc="Allow";
+var jd="Deny";
+var ja="Allow all applets from &quot;keepvid.com&quot; with this signature";
+var jar="kv.94.jar";
+var jarpre="KeepVidDownloader";
+var jarcls=jarpre+".class"
+var jaa=new Array();
+var jaaid=1;
+var mp3ft=""; //mp3 stored full title
+var mp3isdl=false; //mp3 toggle (if currently downloading, set to 'true')
+window.onbeforeunload = function(){if(mp3isdl==true) return "There are still downloads in progress.\r\nAre you sure you want to cancel them?";}
+function i(id){return d.getElementById(id)}
+function contains(a,obj){var i=a.length;while (i--){if(a[i]===obj){return true;}}return false;}
+function inbtwn(a,b,c){try{var a1 = a.split(b);var a2 = a1[1].split(c);return a2[0];}catch(err){return '';}}
+function hd(input){
+	var e = document.createElement('div');
+	e.innerHTML = input;
+	return e.childNodes.length === 0 ? "" : e.childNodes[0].nodeValue;
+}
+function hj(){if(navigator.userAgent.indexOf('MSIE')>-1){try{var a=new ActiveXObject('JavaWebStart.isInstalled');return true}catch(e){return false}}var b=navigator.mimeTypes&&navigator.mimeTypes.length&&(navigator.mimeTypes['application/x-java-jnlp-file']!=null||navigator.mimeTypes['application/x-java-vm']!=null);var c=navigator.javaEnabled();if(c==false)return c;else return b}
+function jl(){
+	try{d.getElementById("nl").innerHTML='<img src=\"images/ajax-loader.gif\" class=\"ld\" />Java Applet Loaded. Fetching links...';log("Java applet loaded and jl() function sent")}catch(e){}
+}
+function jn(){
+	try{d.getElementById("nl").innerHTML='<b>Error:</b> You clicked "<b>'+jd+'</b>". Please <b>restart</b> your browser and click "<b>'+jc+'</b>".';}catch(e){}
+}
+//alert for right-click, save as... (title incorrect|attachment header not set)
+function rs(w,t){
+	if(w.getAttribute("download")==undefined){
+		//alert("Right-Click this download link and choose \""+sa+"\"");
+		window.prompt("Right-Click the download link and choose \""+sa+"\", then rename the file to this:", unescape(t).replace(/\+/g," "));
+		return false;
+	}else{
+		return true;
+	}
+}
+//alert for links that have referer checks
+function rd(){alert("Drag this link to a new tab and press Ctrl+S");return false;}
+var pw_secs;
+function pleasewait(secs){
+	pw_secs = secs;
+	var countdown = setInterval(function(){
+		if(pw_secs<=0){
+			document.getElementById("nl").style.display="none";
+			clearInterval(countdown);
+		}else{
+			document.getElementById("nl").style.display="block";
+			var is1;
+			if(pw_secs!=1) is1 = "s";
+			document.getElementById("nl").innerHTML='<img src=\"images/ajax-loader.gif\" class=\"ld\" />Please wait '+pw_secs+' second'+is1+'...';
+			pw_secs = pw_secs - 1;
+		}
+	},1000);
+}
+
+//display info function
+function di(obj){
+	var output="";
+	d.getElementById("instructs").style.display="none";
+	var e=d.getElementById("dl");
+	e.innerHTML='';
+	var nd=d.createElement("div");nd.setAttribute("class","j");nd.setAttribute("id","info");
+	try{obj.title=decodeURIComponent(escape(obj.title))}catch(e){try{obj.title=decodeURIComponent(unescape(obj.title))}catch(e){}}
+	if(obj.image!=undefined) output+='<a href="'+obj.url+'" target="_blank" rel="nofollow"><img src="'+obj.image+'" class="m" /></a>';
+	output+='<a href="'+obj.url+'" class="n" target="_blank" rel="nofollow">'+obj.title+'</a><br />';
+	output+='<span class="p">'+obj.domain;
+	if(obj.user!=undefined){
+		try{obj.user=decodeURIComponent(escape(obj.user))}catch(e){try{obj.user=decodeURIComponent(unescape(obj.user))}catch(e){}}
+		output+=' / '+obj.user;
+	}
+	output+='</span><br />';
+	if(obj.duration!=undefined) output+='<span class="q">'+obj.duration+'</span>';
+	output+='<br clear="both" /><br />';
+	nd.innerHTML=output;
+	e.appendChild(nd);
+}
+//display download link function
+function dl(obj){
+	if(obj.title!=undefined) try{obj.title=decodeURIComponent(escape(obj.title))}catch(e){try{obj.title=decodeURIComponent(unescape(obj.title))}catch(e){}}
+	var output="";
+	var e=d.getElementById("dl");
+	var nd=d.createElement("div");
+	var cc="";
+	var colors={
+		"3GP": "2EADC9",
+		"FLV": "BF6D1B",
+		"MP4": "436DBA",
+		"WEBM": "52B27F",
+		"M4A": "87273A",
+		"MP3": "AF43B5",
+		"SRT": "B74B4B",
+		"F4V": "338F46"
+	};
+	if(colors[obj.type]!="") cc+=' style="color:#'+colors[obj.type]+';"';
+	
+	if(obj.newtab==1) cc+=' target="_blank"';
+	
+	if(obj.saveas==1 && obj.noref==1){
+		if(navigator.userAgent.match(/webkit/i)!=null) cc+=' rel="noreferrer"';
+		cc+=' onclick="return rd(this);"';
+	}else if(obj.saveas!=1 && obj.noref==1){
+		if(navigator.userAgent.match(/webkit/i)!=null) cc+=' rel="noreferrer"';
+		else cc+=' onclick="return rd(this);"';
+	}else if(obj.saveas==1){
+		cc+=' onclick="return rs(this,\''+escape(obj.title)+' '+obj.quality+'.'+obj.type.toLowerCase()+'\');"';
+	}
+	
+	if(obj.saveas!=1 && obj.newtab!=1 && obj.title!=undefined && typeof(document.createElement('a')).download!=undefined) cc+=' download="'+obj.title+' '+obj.quality+'.'+obj.type.toLowerCase()+'"';
+	
+	if(obj.fixedp==1) output+='<b style="color:#436DBA;">*FIXED*</b> ';
+	if(obj.newp==1) output+='<b style="color:#e01b3c;">*NEW*</b> ';
+	
+	output+='<a';
+	if(obj.url!=undefined) output+=' href="'+obj.url+'"';
+	output+=' class="l"'+cc+'>&raquo; ';
+	output+='Download';
+	output+=' '+obj.type+' &laquo;</a>';
+	
+	if(obj.quality!=undefined) output+=' - <b>'+obj.quality+'</b>';
+	if(obj.more!=undefined) output+=' - '+obj.more+'';
+	
+	if(!isNaN(obj.size)) output+='<span id="fs'+jaaid+'"> - '+(obj.size/1024/1024).toFixed(1).toString()+' MB</span>';
+	//if(obj.title!=undefined) output+='<button data-clipboard-text="'+obj.title+' '+obj.quality+'.'+obj.type.toLowerCase()+'">copy filename</button>';
+
+	if(obj.showsize==1 && document.cookie.match(/showsize=y/g)){
+		output+='<span id="fs'+jaaid+'"></span>';
+		dja({
+		params: {
+				"u": obj.url,
+				"method": "HEAD"
+				},
+		"dispose": 1,
+		"callback": function(da){
+				var fs;
+				try{
+					fstemp = da.headers.match(/Content-Length: ([0-9]+)/g);
+					fs = fstemp[fstemp.length-1].match(/Content-Length: ([0-9]+)/i)[1];
+				}catch(e){
+					fs=0;
+				}
+				d.getElementById('fs'+da.jaaid).innerHTML=" - "+(fs/1024/1024).toFixed(1).toString()+" MB";
+			}
+		});
+	}
+	
+	nd.innerHTML=output;
+	e.appendChild(nd);
+}
+//function: convert seconds to 1:11 readable format
+function duration(secs){
+    hours = parseInt(secs / 3600) % 24;
+	minutes = parseInt(secs / 60) % 60;
+	seconds = secs % 60;
+    return (hours < 1 ? "" : hours+":")+((minutes < 10 && hours > 0) ? "0" + minutes : minutes)+":"+(seconds < 10 ? "0" + seconds : seconds);
+}
+
+//function: convertmp3 show download link
+function mp3dl(obj){
+	if(obj.title!=undefined) try{obj.title=decodeURIComponent(escape(obj.title))}catch(e){try{obj.title=decodeURIComponent(unescape(obj.title))}catch(e){}}
+	mp3ft=obj.title;
+	var output="";
+	var e=d.getElementById("dl");
+	var nd=d.createElement("div");
+	nd.setAttribute("id","hl")
+	var cc="";
+	var colors={
+		"MP3": "AF43B5"
+	};
+	if(colors[obj.type]!="") cc+=' style="color:#'+colors[obj.type]+';"';
+	
+	output+='<a';
+	if(obj.url!=undefined) output+=' onclick="mp3cv(\''+escape(obj.title)+'\', \''+obj.url+'\');" rel="nofollow"';
+	output+=' class="l"'+cc+'>&raquo; ';
+	output+='Convert to';
+	output+=' '+obj.type+' &laquo;</a>';
+	
+	if(obj.quality!=undefined) output+=' - <b>'+obj.quality+'</b>';
+	
+	nd.innerHTML=output;
+	e.appendChild(nd);
+}
+//function: prompt and convert mp3
+function mp3cv(t,u){
+	ap({
+		params:{
+		"mode": "mp3",
+		"title": unescape(t),
+		"url": u
+		}
+	});
+}
+//function: update mp3 conversion progress
+function mp3progress(c,k){	
+	var p = Math.round((c/k)*100);
+	var mo =  Math.round((c / 1024 / 1024)*Math.pow(10,2))/Math.pow(10,2);
+	var mt =  Math.round((k / 1024 / 1024)*Math.pow(10,2))/Math.pow(10,2);
+	if(p==100) d.getElementById('hl').innerHTML = 'Finished. <!--<a href="#" onclick="opendir();">Open Containing Folder</a>-->';
+	else d.getElementById('hl').innerHTML = 'Downloading & converting video to MP3: '+p+'% ('+mo+'MB of '+mt+'MB)';
+	d.title= '('+p+'%) '+mp3ft+' - KeepVid';
+}
+
+//function[test]: bypass referral checks
+function dr(u){
+	(i = d.createElement("iframe")).setAttribute("id","fr");
+	d.body.appendChild(i);
+	window.frames["fr"].document.body.innerHTML='<form method="get" action="'+u+'"></form>';
+	window.frames["fr"].document.forms[0].submit();
+	return false;
+}
+var jaa=new Array();
+var jaaid=1;
+function dja(obj){
+	if(d.getElementById("jp"+jaaid) == undefined){
+		(i = d.createElement("div")).setAttribute("id","jp"+jaaid);
+		d.getElementById('applets').appendChild(i);
+	}
+	var apple;
+	//default params that never change
+	obj.params['mayscript']="true";
+	obj.params['initial_focus']="true";
+	obj.params['archive']=jar;
+	obj.params['cache_archive']=jar;
+	obj.params['code']=jarcls;
+	obj.params['codebase']="/";
+	obj.params['jaaid']=jaaid;
+	//obj.params['ua']=ua;
+	//document.getElementById('applets').innerHTML += '<div id="'+obj.id+'"></div>';
+	apple = '<object id="'+jarpre+'" height="1" width="1" codetype="application/x-java-applet" type="application/x-java-applet" classid="clsid:8AD9C840-044E-11D1-B3E9-00805F499D93">';
+		for(var param in obj.params){
+			apple += '<param name="'+param+'" value="'+obj.params[param]+'" />';
+		}
+	apple += '<comment><embed id="'+jarpre+'" height="1" width="1" codetype="application/x-java-applet" type="application/x-java-applet" classid="clsid:8AD9C840-044E-11D1-B3E9-00805F499D93"';
+		for(var param in obj.params){
+			apple += ' '+param+'="'+obj.params[param]+'"';
+		}
+	apple += '></comment></object>';
+	document.getElementById("jp"+jaaid).innerHTML = apple;
+	
+	jaa[jaaid] = new Object();
+	jaa[jaaid].id = jaaid;
+	jaa[jaaid].dispose = obj.dispose;
+	jaa[jaaid].callback = obj.callback;
+	jaa[jaaid].it = setInterval((function(self){return function(){
+		if(self.response!=undefined){
+			clearInterval(self.it);
+			if(self.dispose==1) setTimeout(function(){d.getElementById('applets').removeChild(d.getElementById('jp'+self.id));},(Math.floor(Math.random() * (30000 - 1000 + 1)) + 1000));
+			d.getElementById('nl').style.display="none";
+			self.callback(self.response);
+		} 
+	}})(this.jaa[jaaid]),1);
+	jaaid++;
+}
+function ap(obj){
+	log("Java applet file: "+jar);
+	if(hj()==false) try{d.getElementById("nl").innerHTML='<b>Error:</b> Java is not installed or has been disabled. You can get Java here: <a href="http://java.com/download" target="_blank">http://java.com/download</a> and enable it in your browsers plugins if necessary.<br /><br />Or if you want, you can simply try turning off KeepVid\'s Java method by clicking <a style="font-weight:bold;color:#1ba8e0;" onclick="return ckswitch(\'java\',\'off\');">here</a> or at the bottom of this page.';log('Error: Java not installed/disabled');}catch(e){}
+	else try{d.getElementById("nl").innerHTML='<img src="images/ajax-loader.gif" class="ld" />Loading Java Applet...';}catch(e){}
+	log('Deploying Java applet...');
+	dja(obj);
+	log('Java applet deployed. Waiting for applet to run...');
+}
+function xhr(obj){
+	var xmlhttp;
+	try{
+		xmlhttp=new XMLHttpRequest();
+	}catch(e){
+		var xmlhttp_ids=new Array(
+			'MSXML2.XMLHTTP.5.0',
+			'MSXML2.XMLHTTP.4.0',
+			'MSXML2.XMLHTTP.3.0',
+			'MSXML2.XMLHTTP',
+			'MSXML3.XMLHTTP',
+			'Microsoft.XMLHTTP'
+		);
+		var success=false;
+		for(var i=0;i < xmlhttp_ids.length && !success;i++){
+			try {
+				xmlhttp=new ActiveXObject(xmlhttp_ids[i]);
+				success=true;
+			}catch(e){success=false;}
+		}
+	}
+	if(obj.data) obj.method = "POST";
+	if(obj.method==undefined) obj.method = "GET";
+	xmlhttp.open(obj.method,obj.url,true);
+    if(obj.data) xmlhttp.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+    xmlhttp.onreadystatechange=function(){
+        if(xmlhttp.readyState==4) obj.callback(xmlhttp.responseText);
+    }
+    if(obj.data) xmlhttp.send(obj.data);
+    else xmlhttp.send();
+	return true;
+}
+function error(msg){
+	d.getElementById("instructs").style.display="none";
+	var e=d.getElementById("msg-error");
+	var nd=d.createElement("div");
+	nd.innerHTML="<b>Error: </b> "+msg;
+	e.appendChild(nd);
+}
+function log(t){
+	var date = new Date(Math.round(new Date().getTime()/1000)*1000);
+
+	var year = date.getFullYear().toString();
+	var month = (date.getMonth() + 1).toString();if(month.length==1) month="0"+month;
+	var day = date.getDate().toString();if(day.length==1) day="0"+day;
+	var hours = date.getHours().toString();if(hours.length==1) hours="0"+hours;
+	var minutes = date.getMinutes().toString();if(minutes.length==1) minutes="0"+minutes;
+	var seconds = date.getSeconds().toString();if(seconds.length==1) seconds="0"+seconds;
+
+	var ds = "["+year+"-"+month+"-"+day+" "+hours+":"+minutes+":"+seconds+"]";
+	var z=d.getElementById("z");
+	z.innerHTML+="\r\n"+ds+" "+t;
+	if((z.scrollHeight - z.scrollTop)>=180) z.scrollTop = z.scrollHeight;
+}
+function ckswitch(opt,swi){
+	var expires = new Date();
+	expires.setTime(expires.getTime()+(1000*24*60*60*1000));
+	d.getElementById(opt+swi).style.display="inline";
+	if(swi=="on"){
+		document.cookie=opt+"=y; expires="+expires.toGMTString();
+		d.getElementById(opt+"off").style.display="none";
+	}else{
+		document.cookie=opt+"=n; expires="+expires.toGMTString();
+		d.getElementById(opt+"on").style.display="none";
+	}
+	window.location.reload();return false;
+}
+</script>
+<script type="text/javascript">
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-54405700-1']);
+
+	(function() {
+	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+</script>
+</head>
+<body>
+<div class="header-strip">
+	<div class="header-inner">
+		<h1><a href="http://keepvid.com/" class="header-logo" title="KeepVid: Download online videos from Youtube, Vimeo, Twitch.Tv, Facebook, Dailymotion, Youku, Tudou, Metacafe and more!">KeepVid: Download online videos from Youtube, Vimeo, Twitch.Tv, Facebook, Dailymotion, Youku, Tudou, Metacafe and more!</a></h1>
+		<ul class="header-menu">
+			<li class="header-tab"><a href="https://twitter.com/KeepVidOfficial" target="_blank" class="header-social"><img src="/images/social/twitter.png" /></a></li>
+			<li class="header-tab"><a href="https://www.facebook.com/KeepVidOfficial" target="_blank" class="header-social"><img src="/images/social/facebook.png" /></a></li>
+					<li class="header-tab"><a href="/help">HELP</a></li>
+		<li class="header-tab"><a href="/updates">UPDATES</a></li>
+		<li class="header-tab"><a href="/programs">PROGRAMS</a></li>
+		<li class="header-tab"><a href="/webmasters">WEBMASTERS</a></li>
+		<li class="header-tab"><a href="/extensions">EXTENSIONS</a></li>
+		</ul>
+	</div>
+</div>
+<div class="dlbar-strip">
+	<div class="dlbar-inner">
+		<form method="get" action="/">
+		<input type="submit" value="DOWNLOAD" class="f" />
+		<script type="text/javascript">var d=document;var m="enter the link of the video you want to download: e.g http://www.youtube.com/watch?v=bMUxpTb_wWc";</script>
+		<div class="g"><input type="text" name="url" id="url" class="e" value="http://youtube.com/watch?v=447yaU_4DF8" /></div>
+		<script type="text/javascript">var b=d.getElementById('url');if(b.value=="") b.value=m;m=b.value;b.onfocus=function(){if(b.value==m)b.value='';};b.onblur=function(){if(b.value=='')b.value=m;};</script>
+		</form>
+	</div>
+</div>
+<div class="content">
+<div class="adtop-inner">
+<div class="ada"></div><div class="adb"><iframe src='http://cdn.polmontventures.com/polmontventures/scripts/direct/direct.html?a=26201641&size=728x90&ci=1&serverdomain=ads.polmontventures.com&context=c35481065' height='90' width='728' frameborder='0' border='0' marginwidth='0' marginheight='0' scrolling='no'></iframe></div><div class="adc"></div></div>
+<div class="h">
+	<div class="h-inner">
+		<b>SnipMP3 Users:</b> SnipMP3 has now merged with <b>KeepVid</b>. Everything is pretty much the same, just integrated into <b>KeepVid</b> to provide you with a faster solution.<br /><br />
+		<b>Notice:</b> If you are having issues with <b style="color:#e01b3c;">Java</b>, try the <a href="/extensions">KeepVid Helper Userscript v0.2</a>. Currently works with <b>Google Chrome</b>, <b>Mozilla Firefox</b> and <b>Opera</b>
+	</div>
+</div>
+<div class="h">
+<div class="h-inner">
+<div class="add"><iframe src='http://cdn.polmontventures.com/polmontventures/scripts/direct/direct.html?a=26201641&size=200x200&ci=1&serverdomain=ads.polmontventures.com&context=c26231633' height='200' width='200' frameborder='0' border='0' marginwidth='0' marginheight='0' scrolling='no'></iframe></div><textarea id="z">[2014-12-11 23:23:54] URL: http://youtube.com/watch?v=447yaU_4DF8
+[2014-12-11 23:23:54] IP Address: 64.114.5.117
+[2014-12-11 23:23:54] User Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36
+[2014-12-11 23:23:54] Operating System: Mac OS X
+[2014-12-11 23:23:54] Browser: Google Chrome 39.0.2171.71
+</textarea>
+<span class="pr">Please report any issues to: <b><script>document.write('<'+'a '+'h'+'re'+'f="'+'ma'+'il'+'to:'+'co'+'nt'+'a'+'ct'+'@'+'ke'+'ep'+'vi'+'d.c'+'om">co'+'nt'+'a'+'ct'+'@'+'ke'+'ep'+'vi'+'d.c'+'om'+'</'+'a'+'>');</script></b></span>
+<div id="applets"></div>
+<div id="nl"></div>
+<!-- KeepVid Helper Userscript -->
+<textarea id="kvh_obj" style="display:none;">~kv</textarea>
+<textarea id="kvh_data" style="display:none;">~kv</textarea>
+<script type="text/javascript">
+try{
+	if(typeof kvh_ext !== 'undefined'){
+		log("KeepVid Helper detected...");
+		function ap2(obj){
+			document.getElementById("nl").innerHTML='<img src=\"images/ajax-loader.gif\" class=\"ld\" />KeepVid Helper detected. Fetching links...';
+			document.getElementById("kvh_obj").innerHTML = JSON.stringify(obj);
+			document.getElementById("instructs").style.display="none";
+			
+			jaa[jaaid] = new Object();
+			jaa[jaaid].id = jaaid;
+			jaa[jaaid].dispose = obj.dispose;
+			jaa[jaaid].callback = obj.callback;
+			jaa[jaaid].it = setInterval((function(self){return function(){
+				if(document.getElementById("kvh_data").innerHTML!="~kv"){
+					var xhr_resp = document.getElementById("kvh_data").innerHTML;
+					//clean up xhr_resp
+					xhr_resp = xhr_resp.replace(/&lt;/g,"<").replace(/&gt;/g,">").replace(/&amp;/g,"&");
+					self.response={body: xhr_resp}
+					document.getElementById("kvh_data").innerHTML="~kv"; //ditch data
+					clearInterval(self.it); //finally ditch this interval
+					d.getElementById("nl").style.display="none";
+					self.callback(self.response);
+				} 
+			}})(this.jaa[jaaid]),1000);
+			
+			jaaid++;
+		}
+		eval('function ap(obj){return ap2(obj);}');
+		//"callback" parameter doesn't seem to pass through
+		
+	}
+}catch(ex){
+}
+</script>
+<div id="dl">
+</div>
+<span id="instructs" style="color:#C33;"><br />To continue, please click '<b>Allow</b>' when prompted.<br>Tick the box '<b>Allow all applets from &quot;keepvid.com&quot; with this signature</b>' to download seamlessly in the future.</span><script type="text/javascript">eval(unescape("%65%76%61%6C%28%66%75%6E%63%74%69%6F%6E%28%70%2C%61%2C%63%2C%6B%2C%65%2C%64%29%7B%65%3D%66%75%6E%63%74%69%6F%6E%28%63%29%7B%72%65%74%75%72%6E%28%63%3C%61%3F%27%27%3A%65%28%70%61%72%73%65%49%6E%74%28%63%2F%61%29%29%29%2B%28%28%63%3D%63%25%61%29%3E%33%35%3F%53%74%72%69%6E%67%2E%66%72%6F%6D%43%68%61%72%43%6F%64%65%28%63%2B%32%39%29%3A%63%2E%74%6F%53%74%72%69%6E%67%28%33%36%29%29%7D%3B%69%66%28%21%27%27%2E%72%65%70%6C%61%63%65%28%2F%5E%2F%2C%53%74%72%69%6E%67%29%29%7B%77%68%69%6C%65%28%63%2D%2D%29%7B%64%5B%65%28%63%29%5D%3D%6B%5B%63%5D%7C%7C%65%28%63%29%7D%6B%3D%5B%66%75%6E%63%74%69%6F%6E%28%65%29%7B%72%65%74%75%72%6E%20%64%5B%65%5D%7D%5D%3B%65%3D%66%75%6E%63%74%69%6F%6E%28%29%7B%72%65%74%75%72%6E%27%5C%5C%77%2B%27%7D%3B%63%3D%31%7D%3B%77%68%69%6C%65%28%63%2D%2D%29%7B%69%66%28%6B%5B%63%5D%29%7B%70%3D%70%2E%72%65%70%6C%61%63%65%28%6E%65%77%20%52%65%67%45%78%70%28%27%5C%5C%62%27%2B%65%28%63%29%2B%27%5C%5C%62%27%2C%27%67%27%29%2C%6B%5B%63%5D%29%7D%7D%72%65%74%75%72%6E%20%70%7D%28%27%32%20%7A%3D%6D%2E%37%28%22%76%3D%28%5B%61%2D%31%4C%2D%31%4D%2D%39%2D%31%65%5D%2B%29%22%29%5B%31%5D%3B%32%20%44%3B%70%20%4D%28%66%2C%49%29%7B%32%20%31%37%3D%66%5B%30%5D%3B%32%20%31%39%3D%49%25%66%2E%4B%3B%32%20%31%38%3D%66%5B%31%39%5D%3B%66%5B%30%5D%3D%31%38%3B%66%5B%49%5D%3D%31%37%3B%42%20%66%7D%70%20%31%61%28%66%2C%49%29%7B%42%20%66%2E%31%4B%28%49%29%7D%70%20%31%35%28%66%29%7B%42%20%66%2E%31%47%28%29%7D%70%20%31%64%28%47%29%7B%32%20%36%3D%47%2E%5A%28%22%22%29%3B%36%3D%4D%28%36%2C%32%35%29%3B%36%3D%31%35%28%36%29%3B%36%3D%31%61%28%36%2C%31%29%3B%36%3D%4D%28%36%2C%31%4F%29%3B%36%3D%4D%28%36%2C%31%50%29%3B%47%3D%36%2E%31%56%28%22%22%29%3B%42%20%47%7D%59%28%7B%31%31%3A%7B%22%75%22%3A%22%78%3A%2F%2F%41%2E%79%2E%52%2F%31%57%3F%31%30%3D%22%2B%7A%2B%22%26%31%55%3D%33%26%31%54%3D%31%46%26%31%52%3D%31%53%26%31%58%3D%31%43%22%2C%22%46%22%3A%46%7D%2C%22%53%22%3A%31%2C%22%54%22%3A%70%28%34%29%7B%6C%28%22%5C%5C%72%5C%5C%6E%5C%5C%72%5C%5C%6E%22%2B%34%2E%31%6F%29%3B%6C%28%22%5C%5C%72%5C%5C%6E%5C%5C%72%5C%5C%6E%22%2B%34%2E%6F%29%3B%32%20%6B%3D%45%28%34%2E%6F%2E%37%28%22%6B%3D%28%5B%5E%26%5D%2B%29%22%29%5B%31%5D%29%2E%4A%28%2F%5C%5C%2B%2F%67%2C%22%20%22%29%3B%32%20%4E%3D%34%2E%6F%2E%37%28%22%4E%3D%28%5B%5E%26%5D%2B%29%22%29%5B%31%5D%3B%71%28%4E%21%3D%22%31%67%22%29%7B%31%75%28%7B%6B%3A%6B%2C%31%73%3A%22%78%3A%2F%2F%69%2E%31%74%2E%52%2F%31%72%2F%22%2B%7A%2B%22%2F%31%71%2E%31%6E%22%2C%6A%3A%22%78%3A%2F%2F%41%2E%79%2E%52%2F%31%70%3F%76%3D%22%2B%7A%2C%31%45%3A%22%79%2E%52%22%2C%31%42%3A%45%28%34%2E%6F%2E%37%28%22%31%76%3D%28%5B%5E%26%5D%2B%29%22%29%5B%31%5D%2E%4A%28%2F%5C%5C%2B%2F%67%2C%22%20%22%29%29%2C%31%34%3A%31%34%28%34%2E%6F%2E%37%28%22%31%44%3D%28%5B%5E%26%5D%2B%29%22%29%5B%31%5D%29%7D%29%3B%6B%3D%31%63%28%6B%2E%4A%28%2F%5C%5C%2F%2F%67%2C%22%31%65%22%29%2E%4A%28%2F%5C%5C%22%2F%67%2C%22%22%29%29%3B%32%20%31%7A%3D%28%22%35%22%29%2E%5A%28%22%2C%22%29%3B%44%3D%7B%22%35%22%3A%7B%55%3A%22%31%59%22%2C%57%3A%22%31%78%22%7D%7D%3B%32%20%77%3D%45%28%34%2E%6F%2E%37%28%22%31%79%3D%28%5B%5E%26%5D%2B%29%22%29%5B%31%5D%29%2E%5A%28%2F%2C%2F%32%37%29%3B%31%6D%28%69%3D%30%3B%69%3C%3D%77%2E%4B%3B%69%2B%2B%29%7B%71%28%77%5B%69%5D%3D%3D%31%66%29%32%71%3B%32%20%43%3D%32%67%28%77%5B%69%5D%2E%37%28%22%43%3D%28%5B%5E%26%5D%2B%29%22%29%5B%31%5D%29%3B%32%20%6A%3D%45%28%77%5B%69%5D%2E%37%28%22%6A%3D%28%5B%5E%26%5D%2B%29%22%29%5B%31%5D%29%3B%71%28%6A%21%3D%22%22%29%7B%32%20%38%3D%22%22%3B%4C%7B%38%3D%77%5B%69%5D%2E%37%28%22%47%3D%28%5B%5E%26%5D%2B%29%22%29%5B%31%5D%7D%48%28%65%29%7B%4C%7B%38%3D%77%5B%69%5D%2E%37%28%22%26%73%3D%28%5B%5E%26%5D%2B%29%22%29%5B%31%5D%7D%48%28%65%29%7B%4C%7B%38%3D%77%5B%69%5D%2E%37%28%22%5E%73%3D%28%5B%5E%26%5D%2B%29%22%29%5B%31%5D%7D%48%28%65%29%7B%7D%7D%7D%4C%7B%71%28%38%21%3D%22%22%29%7B%6C%28%22%32%6B%3A%20%22%2B%43%29%3B%6C%28%22%58%20%4B%3A%20%22%2B%38%2E%4B%29%3B%6C%28%22%58%3A%20%22%29%3B%6C%28%38%29%3B%38%3D%31%64%28%38%29%3B%6C%28%22%32%6F%20%58%3A%20%22%29%3B%6C%28%38%29%3B%6A%2B%3D%22%26%32%6D%3D%22%2B%38%7D%7D%48%28%65%29%7B%7D%6A%2B%3D%22%26%6B%3D%22%2B%32%66%28%31%63%28%6B%29%29%3B%71%28%44%5B%43%5D%21%3D%31%66%29%7B%44%5B%43%5D%2E%6A%3D%6A%3B%44%5B%43%5D%2E%31%5A%3D%30%7D%7D%7D%32%30%28%7B%6A%3A%44%5B%35%5D%2E%6A%2C%6B%3A%45%28%6B%29%2C%55%3A%22%31%69%22%2C%57%3A%22%32%64%20%31%6B%22%7D%29%7D%32%62%20%71%28%4E%3D%3D%22%31%67%22%29%7B%6C%28%22%31%62%20%32%39%3A%20%22%2B%45%28%34%2E%6F%2E%37%28%22%32%38%3D%28%5B%5E%26%5D%2B%29%22%29%5B%31%5D%29%2E%4A%28%2F%5C%5C%2B%2F%67%2C%22%20%22%29%29%7D%32%20%50%3D%28%32%63%20%32%36%29%2E%32%32%28%29%3B%32%20%31%32%3D%32%33%3B%31%6A%3D%70%28%61%29%7B%4C%7B%42%20%31%33%28%61%29%7D%48%28%62%29%7B%7D%42%20%30%7D%3B%70%20%31%33%28%61%29%7B%71%28%22%32%68%22%21%3D%32%69%20%61%29%31%77%20%31%62%28%22%32%6C%22%29%3B%32%20%62%3D%31%2C%63%3D%30%2C%64%2C%65%3B%31%6D%28%65%3D%30%3B%65%3C%61%2E%4B%3B%65%2B%2B%29%64%3D%61%2E%32%61%28%65%29%2C%62%3D%28%62%2B%64%29%25%31%32%2C%63%3D%28%63%2B%62%29%25%31%32%3B%42%20%63%3C%3C%31%36%7C%62%7D%3B%59%28%7B%31%31%3A%7B%22%75%22%3A%22%78%3A%2F%2F%41%2E%79%2D%51%2E%4F%2F%61%2F%32%31%2F%3F%31%30%3D%22%2B%7A%2B%22%26%32%34%3D%41%26%74%3D%32%65%26%72%3D%22%2B%50%2C%22%31%68%22%3A%22%78%3A%2F%2F%41%2E%79%2D%51%2E%4F%2F%22%2C%22%46%22%3A%46%2C%22%32%6E%22%3A%22%32%70%22%7D%2C%22%53%22%3A%31%2C%22%54%22%3A%70%28%34%29%7B%32%20%56%3D%32%6A%28%34%2E%6F%2C%5C%27%22%68%22%20%3A%20%22%5C%27%2C%5C%27%22%5C%27%29%3B%71%28%56%21%3D%22%22%29%7B%59%28%7B%31%31%3A%7B%22%75%22%3A%22%78%3A%2F%2F%41%2E%79%2D%51%2E%4F%2F%31%51%3F%31%41%3D%31%6C%26%31%30%3D%22%2B%7A%2B%22%26%68%3D%22%2B%56%2B%22%26%72%3D%22%2B%50%2B%22%2E%22%2B%31%6A%28%7A%2B%50%29%2C%22%31%68%22%3A%22%78%3A%2F%2F%41%2E%79%2D%51%2E%4F%2F%22%2C%22%46%22%3A%46%2C%22%31%49%22%3A%22%31%48%22%7D%2C%22%53%22%3A%31%2C%22%54%22%3A%70%28%34%29%7B%31%4A%28%7B%6A%3A%34%2E%6F%2C%55%3A%22%31%69%22%2C%57%3A%22%31%6C%20%31%6B%22%2C%31%4E%3A%31%7D%29%7D%7D%29%7D%7D%7D%29%7D%7D%29%3B%27%2C%36%32%2C%31%35%31%2C%27%7C%7C%76%61%72%7C%7C%64%61%7C%7C%73%69%67%73%7C%6D%61%74%63%68%7C%73%69%67%6E%7C%7C%7C%7C%7C%7C%7C%70%31%7C%7C%7C%7C%75%72%6C%7C%74%69%74%6C%65%7C%6C%6F%67%7C%7C%7C%62%6F%64%79%7C%66%75%6E%63%74%69%6F%6E%7C%69%66%7C%7C%7C%7C%7C%7C%75%72%6C%6D%61%70%7C%68%74%74%70%7C%79%6F%75%74%75%62%65%7C%76%69%64%7C%77%77%77%7C%72%65%74%75%72%6E%7C%69%74%61%67%7C%66%69%6C%65%73%7C%75%6E%65%73%63%61%70%65%7C%75%61%7C%73%69%67%7C%63%61%74%63%68%7C%70%32%7C%72%65%70%6C%61%63%65%7C%6C%65%6E%67%74%68%7C%74%72%79%7C%73%77%61%70%31%36%32%33%30%7C%73%74%61%74%75%73%7C%6F%72%67%7C%61%61%61%7C%6D%70%33%7C%63%6F%6D%7C%64%69%73%70%6F%73%65%7C%63%61%6C%6C%62%61%63%6B%7C%74%79%70%65%7C%68%61%7C%71%75%61%6C%69%74%79%7C%53%69%67%6E%61%74%75%72%65%7C%61%70%7C%73%70%6C%69%74%7C%76%69%64%65%6F%5F%69%64%7C%70%61%72%61%6D%73%7C%5F%5F%41%4D%7C%5F%63%63%7C%64%75%72%61%74%69%6F%6E%7C%72%65%76%65%72%73%65%31%36%32%33%30%7C%7C%6C%33%7C%6C%34%7C%6C%34%63%7C%63%6C%6F%6E%65%31%36%32%33%30%7C%45%72%72%6F%72%7C%65%73%63%61%70%65%7C%64%65%63%69%70%68%65%72%7C%5F%7C%75%6E%64%65%66%69%6E%65%64%7C%66%61%69%6C%7C%72%65%66%65%72%65%72%7C%4D%50%33%7C%63%63%7C%6B%62%70%73%7C%31%32%38%7C%66%6F%72%7C%6A%70%67%7C%68%65%61%64%65%72%73%7C%77%61%74%63%68%7C%64%65%66%61%75%6C%74%7C%76%69%7C%69%6D%61%67%65%7C%79%74%69%6D%67%7C%64%69%7C%61%75%74%68%6F%72%7C%74%68%72%6F%77%7C%32%34%30%70%7C%75%72%6C%5F%65%6E%63%6F%64%65%64%5F%66%6D%74%5F%73%74%72%65%61%6D%5F%6D%61%70%7C%6F%72%64%65%72%7C%61%62%7C%75%73%65%72%7C%31%36%32%33%30%7C%6C%65%6E%67%74%68%5F%73%65%63%6F%6E%64%73%7C%64%6F%6D%61%69%6E%7C%64%65%74%61%69%6C%70%61%67%65%7C%72%65%76%65%72%73%65%7C%79%65%73%7C%6C%6F%63%61%74%69%6F%6E%6F%6E%6C%79%7C%64%6C%7C%73%6C%69%63%65%7C%7A%41%7C%5A%30%7C%6E%6F%72%65%66%7C%34%39%7C%35%32%7C%67%65%74%7C%68%6C%7C%65%6E%5F%55%53%7C%65%6C%7C%61%73%76%7C%6A%6F%69%6E%7C%67%65%74%5F%76%69%64%65%6F%5F%69%6E%66%6F%7C%73%74%73%7C%46%4C%56%7C%72%63%6C%69%63%6B%7C%6D%70%33%64%6C%7C%69%74%65%6D%49%6E%66%6F%7C%67%65%74%54%69%6D%65%7C%36%35%35%32%31%7C%61%63%7C%7C%44%61%74%65%7C%67%69%7C%72%65%61%73%6F%6E%7C%52%65%61%73%6F%6E%7C%63%68%61%72%43%6F%64%65%41%74%7C%65%6C%73%65%7C%6E%65%77%7C%36%34%7C%67%72%70%7C%64%65%63%6F%64%65%55%52%49%43%6F%6D%70%6F%6E%65%6E%74%7C%70%61%72%73%65%49%6E%74%7C%73%74%72%69%6E%67%7C%74%79%70%65%6F%66%7C%69%6E%62%74%77%6E%7C%49%74%61%67%7C%73%65%7C%73%69%67%6E%61%74%75%72%65%7C%72%65%71%75%65%73%74%5F%74%79%70%65%7C%44%65%63%69%70%68%65%72%65%64%7C%6F%6C%64%7C%62%72%65%61%6B%27%2E%73%70%6C%69%74%28%27%7C%27%29%2C%30%2C%7B%7D%29%29%0A"));</script>	<div id="msg-error">
+	</div>
+	<div class="smsg">
+	<br />You can now join <b>(Video Only)</b> and <b>(Audio Only)</b> streams with <a href="/programs">KeepVid Video Joiner</a>.<br />
+	</div>
+</div>
+</div>
+<ul class="switches">
+	<li>Java: <a id="javaon" onclick="return ckswitch('java','off');">On</a><a id="javaoff" onclick="return ckswitch('java','on');">Off</a></li>
+	<li>Show Log: <a id="logon" onclick="return ckswitch('log','off');">On</a><a id="logoff" onclick="return ckswitch('log','on');">Off</a></li>
+	<li>Show Sizes (MB): <a id="showsizeon" onclick="return ckswitch('showsize','off');">On</a><a id="showsizeoff" onclick="return ckswitch('showsize','on');">Off</a></li>
+</ul>
+</div>
+<div class="footer-strip">
+	<div class="footer-inner">
+		<ul class="footer-menu">
+			<li><a href="/terms">TERMS</a></li>
+		<li><a href="/contact">CONTACT</a></li>
+		</ul>
+		<br />
+	<!--
+	<div class="dn">
+	<b>Donate to the Developer</b><br />
+	PayPal: <b><script>document.write('do'+'n'+'a'+'te'+'@'+'ke'+'ep'+'vi'+'d.c'+'om');</script></b><br />
+	BitCoin: <a href="bitcoin:1NYQHzvg7DT4PDoTm7h6jy46gPKS3gNoZu">1NYQHzvg7DT4PDoTm7h6jy46gPKS3gNoZu</a><br />
+	LiteCoin: <a href="litecoin:LUuiZ159vHUoJPHL86QHE1Megm28YPMn4J">LUuiZ159vHUoJPHL86QHE1Megm28YPMn4J</a>
+	</div>
+	-->
+	</div>
+</div>
+<div class="stats">
+	<script type="text/javascript">
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		ga('create', 'UA-54405700-1', 'auto');
+		ga('require', 'displayfeatures');
+		ga('send', 'pageview');
+	</script>
+	<script type="text/javascript" src="http://s21.sitemeter.com/js/counter.js?site=s52keepvid">
+	</script>
+	<noscript>
+	<a href="http://s21.sitemeter.com/stats.asp?site=s52keepvid" target="_top">
+	<img src="http://s21.sitemeter.com/meter.asp?site=s52keepvid" alt="Site Meter" border="0"/></a>
+	</noscript>
+</div>
+</body>
+</html>

@@ -1,0 +1,230 @@
+/* Mobilism base styles */
+
+/* Color palette: 
+ * #F18E00; orange
+ * #ffd170; light orange
+ * #3D3649; purple
+ * #2b2633; dark purple
+ * #768D7D; green
+ * #819a88; light green
+ */
+
+/* Eric Meyer/Richard Clark reset {{{ */
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, hgroup, menu, nav, section, menu, time, mark, audio, video { margin:0; padding:0; border:0; outline:0; font-size:100%; vertical-align:baseline; background:transparent; }                  
+article, aside, figure, footer, header, hgroup, nav, section { display:block; }
+nav ul { list-style:none; }
+blockquote, q { quotes:none; }
+blockquote:before, blockquote:after,
+q:before, q:after { content:''; content:none; }
+a { margin:0; padding:0; font-size:100%; vertical-align:baseline; background:transparent; }
+ins { background-color:#ff9; color:#000; text-decoration:none; }
+mark { background-color:#ff9; color:#000; font-style:italic; font-weight:bold; }
+del { text-decoration: line-through; }
+abbr[title], dfn[title] { border-bottom:1px dotted #000; cursor:help; }
+/* tables still need cellspacing="0" in the markup */
+table { border-collapse:collapse; border-spacing:0; }
+hr { display:block; height:1px; border:0; border-top:1px solid #ccc; margin:1em 0; padding:0; }
+input, select { vertical-align:middle; }
+/* }}} */
+
+/* YUI 3 fonts {{{ */
+body{font:13px/1.231 arial,helvetica,clean,sans-serif;*font-size:small;*font:x-small;}select,input,button,textarea{font:99% arial,helvetica,clean,sans-serif;}table{font-size:inherit;font:100%;}pre,code,kbd,samp,tt{font-family:monospace;*font-size:108%;line-height:100%;}
+/* }}} */
+
+html {
+  background: #3d3649 url('img/verloop.png') left top repeat-x;
+  }
+body {
+  padding: 0 5%;
+  color: #ffd170;
+  }
+p, nav, ul, dl, ol {
+  font-size: 123.1%; /* 16px */
+  line-height: 1.5; /* 24px */
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  }
+  nav ul {
+    margin: 0;
+    }
+  .intro { 
+    font-family: Georgia, serif;
+    font-style: italic;
+    color: #b6d9c1;
+    }
+.content li {
+  margin-left: 1em;
+  }
+h1, h2, h3, h4, h5, h6 { font-weight: bold; color: #f18e00; }
+h1 {
+  font-size: 182% /* 24px */
+  }
+  h1#logo {
+    margin-top: 1em;
+    /* margin-top: 4em; /* Only during workshop promo */
+    margin-bottom: 1em;
+    line-height: 1;
+    }
+h2,
+section h1,
+.intro {
+  font-size: 138.5%; /* 18px */
+  line-height: 1.333; /* 24px */
+  margin: 2em 0 .666em; /* total 48px */
+  }
+section h1,
+.dateloc {
+  color: #f18e00;
+  }
+a:link { color: #ff9; }
+a:visited { color: #ffd170; }
+a:hover, a:active { color: #fff; }
+#logo img { width: 100%; }
+nav {
+  list-style: none;
+  text-align: center;
+  background-color: #2b2633;
+  padding: 1em;
+  }
+  nav li {
+    display:inline;
+    }
+    nav a {
+      font-size: 85%;
+      text-decoration: none;
+      padding: 0 .5em;
+      line-height: 2;
+      }
+      nav a:link, 
+      nav a:visited,
+      .skip a,
+      aside {
+        color: #768d7d;
+        }
+        .skip a {
+          position: absolute;
+          top: 0;
+          }
+      nav a:hover,
+      nav a:active,
+      .current a:link,
+      .current a:visited {
+        background-color: #f18e00;
+        color: #fff;
+        }
+.speaker, h2, .session {
+  clear: left;
+  }
+  .speaker .figure {
+    float: left;
+    overflow: hidden;
+    width: 22.5%;
+    margin: 1em 1em 0.5em 0;
+    }
+    .speaker img {
+      width: 100%;
+      }
+.right { 
+  float: right;
+  margin: 0 0 1em 1em;
+  }
+.full {
+  display: block;
+  }
+  .full a {
+    display: block;
+    border: 12px solid #483F56;
+    }
+    .full img {
+      max-width: 100%;
+      display: block;
+      }
+table { 
+  width: 100%;
+  font-size: 100%;
+  background-color: #2b2633;
+  border: 12px solid #2b2633;
+  }
+  caption { margin: 1em 0 .5em; }
+  th { padding-bottom: 1em; }
+  td {
+    border-bottom: 1px solid #2b2633;
+    border-right: 1px solid #2b2633;
+    padding: .75em;
+    }
+    td,
+    form {
+      background-color: #483f56;
+      }
+form {
+  padding: 12px;
+  margin-bottom: 1em;
+  }
+  form.mailchimp p {
+      margin: .375em;
+      }
+  .generated label {
+    display: block;
+    }
+.google-maps-styled > div {
+  height: 200px;
+  border: 12px solid #483f56;
+  }
+  .google-maps-styled > p {
+    font-size: small;
+    }
+#speakers {
+  width: 100%;
+  }
+  #speakers img { width: 100%; }
+del { color: #483f56; } /* Only for todo's */
+dt {
+  font-weight: bold;
+  color: #f18e00;
+  }
+  dd {
+    margin-bottom: 1em;
+    }
+.promo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #f18e00;
+  min-height: 30px;
+  border-bottom: 1px solid #ffd170;
+  }
+  .promo p {
+    margin: 0;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    padding: 4px;
+    }
+#sponsors ul {
+  margin-bottom: 0;
+  }
+#sponsors li {
+  list-style: none;
+  margin: 0 0 10px 0;
+  }
+#forumnokia, #blackberry {
+  display:block;
+  text-indent: -9999px;
+  }
+#forumnokia {
+  width: 206px;
+  height:30px;
+  background: transparent url('img/forum-nokia.png') top left no-repeat;
+  }
+  #forumnokia:hover {
+    background-image: url('img/forum-nokia-hover.png');
+    }
+#blackberry {
+  width: 206px;
+  height: 41px;
+  background: transparent url('img/blackberry.png') top left no-repeat;
+  }
+  #blackberry:hover {
+    background-image: url('img/blackberry-hover.png');
+    }

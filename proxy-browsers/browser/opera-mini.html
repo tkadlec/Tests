@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Opera Mini</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="/proxy-browsers/css/style.css">
+</head>
+<body>
+	<div id="wrap">
+		<h1>Opera Mini</h1>
+		<p>Opera Mini is a proxy browser that focuses on both decreasing bandwidth use as well as enabling lower-powered devices to better experience the web. Pages are requested by their servers, rendered on the server, and then passed to the client in a proprietary format.</p>
+		<p>Can also be enabled using "Off-Road" mode in Opera mobile.</p>
+		<h2>Summary</h2>
+		<table class="striped">
+			<tbody>
+				<tr>
+					<th>Data Savings</th>
+					<td>Up to 90%</td>
+				</tr>
+				<tr>
+					<th>HTTPS Behavior</th>
+					<td>Unclear</td>
+				</tr>
+				<tr>
+					<th>Network Optimization</th>
+					<td>Not at the moment, but HTTP/2.0 is under consideration.</td>
+				</tr>
+				<tr>
+					<th>Transcoding/Compressing Images</th>
+					<td>Compression</td>
+				</tr>
+				<tr>
+					<th>Content compression</th>
+					<td>Everything packaged up and sent back in compressed proprietary format.</td>
+				</tr>
+				<tr>
+					<th>X-Forwarded-For Header</th>
+					<td>Yes</td>
+				</tr>
+				<tr>
+					<th>Additional Headers</th>
+					<td>HTTP_X_OPERAMINI_PHONE_UA, HTTP_X_OPERAMINI_FEATURES, HTTP_X_OPERAMINI_PHONE, HTTP_DEVICE_STOCK_UA</td>
+				</tr>
+				<tr>
+					<th>Cache-control: no-transform</th>
+					<td>Not sure</td>
+				</tr>
+				<tr>
+					<th>Rendering Behavior</th>
+					<td>Done on server</td>
+				</tr>
+				<tr>
+					<th>Rendering Engine</th>
+					<td>Blink</td>
+				</tr>
+			</tbody>
+		</table>
+		<h2>Basic Architecture</h2>
+		<p>When the client makes a request, the request is routed through Opera's servers. Depending on which client you are using, this may be done over traditional HTTP or via a socket that is kept open during the session (providing a boost in performance). The servers perform the initial DNS resolution. They also initiate each request over their own networks (sending an X-Forwarded-For header). The pages are rendered on the server, and all JS execution takes place on the server.</p>
+		<p>The page is sent back to the client in a proprietary format using OBML. Whenever something happens that may change the DOM or Render Tree, the client makes a request to the server. The server sends back the updated snapshot of the page for the client to display</p>
+		<h2>Gotchas</h2>
+		<ul>
+			<li>CSS and SVG animations will not show—only the first frame is rendered.</li>
+			<li>Web fonts are not downloaded.</li>
+			<li>Only supports certain events. JS-only API's will not work.</li>
+			<li>CSS features such as border-radius and gradients are disabled to reduce pagesize.</li>
+		</ul>
+		<h2>Resources</h2>
+		<ul>
+			<li><a href="https://dev.opera.com/articles/opera-mini-and-javascript/">Opera Mini and JavaScript</a></li>
+			<li><a href="https://dev.opera.com/articles/opera-mini-request-headers/">Opera Mini Request Headers</a></li>
+			<li><a href="https://dev.opera.com/articles/opera-mini-content-authoring-guidelines/">Opera Mini: Web Content Authoring Guidelines</a></li>
+		</ul>
+	</div>
+</body>
+</html>

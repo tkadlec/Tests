@@ -1,0 +1,46 @@
+<html>
+<head>
+    <title>Suppressing auto-formatting of numbers as tel: links</title>
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <style type="text/css">
+        body {
+                font: 100%/1.4em "Helvetica Neue",Helvetica,Arial,sans-serif;
+                color: #404040;
+            }
+        div{
+            padding: 0;
+            margin: 0;
+            line-height: 1em;
+        }
+        @media screen and (min-width: 768px) {
+            #test {
+                visibility: hidden;
+                position: relative
+            }
+            #test:after{
+                visibility: visible;
+                left:0;
+                position: absolute;
+                content: attr(data-med-description);
+            }
+        }
+        @media screen and (min-width: 1024px) {
+
+            #test:after{
+
+                content: attr(data-large-description);
+            }
+        }
+    </style>
+</head>
+<body>
+    <p id="test" data-med-description="This is a description for medium screens." data-large-description="This is a description for large screens.">This is a description for small screens.</p>
+
+    <script>
+        var test = document.getElementById('test');
+        test.innerText = test.getAttribute('data-large-description');
+    </script>
+</body>
+</html>
