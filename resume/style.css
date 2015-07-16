@@ -1,0 +1,76 @@
+body{
+	font-family: Georgia, serif;
+	color: #444;
+	max-width: 60em;
+	margin: auto;
+}
+h2 { font-size: 152% }
+h3, h4 { font-size: 122%; }
+h1, h2, h3, h4 { color: #333; font-weight: normal; }
+
+header{
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 1.5em;
+	margin: 2.5em 0 3em 0;
+}
+header h1{
+	font-size: 3em;
+	letter-spacing: 3px;
+	text-transform: uppercase;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding-bottom: 0;
+}
+header h2{
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	margin-top: 0;
+}
+hgroup{
+	float: left;
+	width: 66%;
+}
+
+section { 
+	overflow: hidden;
+	width: 100%;
+	border-bottom: 1px solid #ccc;
+
+}
+section .title{
+	font-style: italic;
+	font-weight: normal;
+	float: left;
+	width: 33%;
+}
+.contain{
+	width: 65%;
+	float: right;
+}
+.job{
+	padding: 1.5em 0;
+		border-bottom: 1px solid #ccc;
+	position: relative;
+	margin-bottom: .5em;
+}
+.job h2, .job h3, .job h4{
+	margin-bottom: 0;
+	margin-top: 0;
+	display: block;
+}
+.job h2{
+	padding-right: 10em;
+}
+.job h4{
+	position: absolute;
+  top: 1em;
+  right: 0;
+}
+.job p{
+	margin: 0.75em 0 2.2em 0;
+	line-height: 1.4em;
+}
+.contain .job:last-child{
+	border-bottom: 0;
+	margin-bottom: 0;
+	}

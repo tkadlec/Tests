@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Chrome Data Compression</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="/proxy-browsers/css/style.css">
+</head>
+<body>
+	<div id="wrap">
+		<h1>Chrome Data Compression (Flywheel)</h1>
+		<p>Chrome's Data Compression Proxy is a conservative proxy (comparitively) that focuses on the network and leaves rendering entirely to the client.</p>
+		<h2>Summary</h2>
+		<table class="striped">
+			<tbody>
+				<tr>
+					<th>Data Savings</th>
+					<td>50%</td>
+				</tr>
+				<tr>
+					<th>HTTPS Behavior</th>
+					<td>Bypasses Proxy</td>
+				</tr>
+				<tr>
+					<th>Network Optimization</th>
+					<td>SPDY</td>
+				</tr>
+				<tr>
+					<th>Transcoding/Compressing Images</th>
+					<td>Images transcoded to WebP format. Images also compressed.</td>
+				</tr>
+				<tr>
+					<th>Content compression</th>
+					<td>HTML, JS, CSS all minified. GZip compression enabled.</td>
+				</tr>
+				<tr>
+					<th>X-Forwarded-For Header</th>
+					<td>Yes</td>
+				</tr>
+				<tr>
+					<th>Cache-control: no-transform</th>
+					<td>Yes</td>
+				</tr>
+				<tr>
+					<th>Additional Headers</th>
+					<td>VIA</td>
+				</tr>
+				<tr>
+					<th>Rendering Behavior</th>
+					<td>On Device</td>
+				</tr>
+				<tr>
+					<th>Rendering Engine</th>
+					<td>Blink</td>
+				</tr>
+			</tbody>
+		</table>
+		<h2>Basic Architecture</h2>
+		<p>When the client makes a request, the request is routed through Google's optimization servers (unless it's HTTPS, in which case the site is loaded directly through the device as normal). The servers perform the initial DNS resolution. They also initiate each request over their own networks (sending an X-Forwarded-For header), optimize the response, and then pass back to the client.</p>
+		<p>If possible, the proxy will run over SPDY (basis for HTTP/2.0) which allows the proxy to allows for multiplexing of request and parallel response streams.</p>
+		<h2>Resources</h2>
+		<ul>
+			<li><a href="https://developer.chrome.com/multidevice/data-compression">Official Google Documentation</a></li>
+			<li><a href="https://developers.google.com/speed/pagespeed/module/optimize-for-bandwidth">PageSpeed Optimize for Bandwidth documentation</a></li>
+			<li><a href="https://chrome.google.com/webstore/detail/data-saver-beta/pfmgfdlgomnbgkofeojodiodmgpgmkac">Official extension for enabling data compression proxy on desktop</a></li>
+			<li><a href="http://research.google.com/pubs/pub43447.html">Paper on Flywheel</a></li>
+		</ul>
+	</div>
+</body>
+</html>

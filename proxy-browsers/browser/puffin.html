@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Puffin Browser</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="/proxy-browsers/css/style.css">
+</head>
+<body>
+	<div id="wrap">
+		<h1>Puffin Browser</h1>
+		<p>Puffin Browser is a proxy browser that focuses on both decreasing bandwidth use as well as enabling lower-powered devices to better experience the web. Pages are requested by their servers, rendered on the server, and then passed to the client in a proprietary format.</p>
+		<h2>Summary</h2>
+		<table class="striped">
+			<tbody>
+				<tr>
+					<th>Data Savings</th>
+					<td>50%</td>
+				</tr>
+				<tr>
+					<th>HTTPS Behavior</th>
+					<td>Routed through proxy, using a persistent connection using TLS. Assets are requested via HTTPS. Temporarily decrypted on the server to create proprietary format which will be sent back over same persistent TLS connection. Servers are sandboxes: no other devices connect and data is destroyed when connection terminated.</td>
+				</tr>
+				<tr>
+					<th>Network Optimization</th>
+					<td>Not at the moment, but HTTP/2.0 is under consideration.</td>
+				</tr>
+				<tr>
+					<th>Transcoding/Compressing Images</th>
+					<td>No</td>
+				</tr>
+				<tr>
+					<th>Content compression</th>
+					<td>Everything packaged up and sent back in compressed proprietary format.</td>
+				</tr>
+				<tr>
+					<th>X-Forwarded-For Header</th>
+					<td>Yes</td>
+				</tr>
+				<tr>
+					<th>Additional Headers</th>
+					<td>HTTP_X_PUFFIN_UA</td>
+				</tr>
+				<tr>
+					<th>Cache-control: no-transform</th>
+					<td>No</td>
+				</tr>
+				<tr>
+					<th>Rendering Behavior</th>
+					<td>Done on server</td>
+				</tr>
+				<tr>
+					<th>Rendering Engine</th>
+					<td>Blink</td>
+				</tr>
+			</tbody>
+		</table>
+		<h2>Basic Architecture</h2>
+		<p>When the client makes a request, the request is routed through Puffin's servers over a persistent secure connection (using TLS). The servers perform the initial DNS resolution. They also initiate each request over their own networks (sending an X-Forwarded-For header). The pages are rendered on the server, and all JS execution takes place on the server.</p>
+		<p>The page is sent back to the client in a proprietary format. Whenever something happens that may change the DOM or Render Tree, the client makes a request to the server over the persistent connection. If nothing has changed, the server doesn't send anything back. If something has, the server sends back a diff of the changes for the client to apply to the page.</p>
+		<h2>Gotchas</h2>
+		<ul>
+			<li>Based on Chrome 30, so standards support is a little behind.</li>
+			<li>DPR will always return 1.0</li>
+			<li>Screen size is grabbed using the native SDK and values differ slightly from default browsers</li>
+			<li>Will execute the scroll event, but if you rely too heavily on it (parallax, etc) the scrolling performance suffers</li>
+			<li>In Desktop Mode, will set screen size to 1024px wide. If site is inflexible, will display poorly unless whitelisted (a manual process).</li>
+		</ul>
+		<h2>Resources</h2>
+		<ul>
+			<li><a href="https://www.puffinbrowser.com/faq/">Basic FAQ's</a></li>
+			<li><a href="https://www.youtube.com/watch?v=FE3ob--Lliw">Video with Dell: Accelerating the Mobile Experience</a></li>
+		</ul>
+	</div>
+</body>
+</html>

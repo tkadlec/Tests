@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Prerender Behavior with Dynamic</title>
+	<meta name="viewport" content="width=device-width" />
+	<style type="text/css">
+        body {
+            font: 100%/1.4em "Helvetica Neue",Helvetica,Arial,sans-serif;
+            color: #404040;
+        }
+		div{
+			padding: 0;
+			margin: 0;
+			line-height: 1em;
+		}
+		#results{
+			border: 1px solid green;
+			padding: 10px;
+		}
+		
+		h1{
+			margin-top: 2.2em;
+		}
+	</style>
+	<link rel="prerender" href="http://test.dev/prerender/second.html">
+</head>
+<body>
+	<h1>Prerendering and JS behavior</h1>
+	<p>Simple test to see when onload fires on pre-render</p>
+
+</body>
+</html>

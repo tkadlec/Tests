@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width" />
+        <title>Web components Examples</title>
+        <link rel="import" href="wc/github-card/github-card.html">
+        <style>
+            body {
+                font: 100%/1.4em "Helvetica Neue",Helvetica,Arial,sans-serif;
+                color: #404040;
+            }
+            a {
+                color: #404040;
+                text-decoration: none;
+                display: block;
+                padding: .5em;
+            }
+            h2 {
+                margin: 1.5em 0 .5em 0;
+            }
+            a:hover{
+                background: #eee;
+            }
+            #wrap {
+                max-width: 40em;
+                margin: auto;
+            }
+        </style>
+    </head>
+    <body>
+    	<div id="wrap">
+    		<h1>Web component experiments</h1>
+    		<h2>This is a details element using a decorator.</h2>
+			<details open>
+			    <summary>Timepieces</summary>
+			    <ul>
+			      <li>Sundial
+			      <li>Cuckoo clock
+			      <li>Wristwatch
+			    </ul>
+			</details>
+			<h2>A custom tab element</h2>
+			<my-tabs>	
+				<h2>Tab 1</h2>
+				<section>Tab 1 content</section>
+				<h2>Tab 2</h2>
+				<section>Tab 2 content</section>
+				<h2>Tab 3</h2>
+				<section>Tab 3 content</section>
+			</my-tabs> 
+<github-card user="tkadlec"><a href="https://github.com/tkadlec/">tkadlec on Github</a></github-card>
+			<h2>Template</h2>
+
+			<div id="nameTag">John</div>
+    
+			<script>
+				var shadow = document.querySelector('#nameTag').createShadowRoot();
+				var content = document.querySelector('link[rel="import"').import;
+
+				var template = content.querySelector('#nameTagTemplate');
+
+				shadow.appendChild(template.content);
+			</script>
+    	</div>
+    </body>
+</html>

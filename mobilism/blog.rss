@@ -1,0 +1,45 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <title>Mobilism news</title>
+  <description>Mobilism news</description>
+  <link>http://mobilism.nl/blog</link>
+  <language>en</language>
+  <generator>QMS</generator>
+  <atom:link href="http://mobilism.nl/blog.rss" rel="self" type="application/rss+xml" />
+  <item>
+   <title>Full line-up for Mobilism 2015</title>
+   <link>http://mobilism.nl/blog/2015/01/full-line-up-for-mobilism-2015</link>
+   <description>Mobilism 2015 will take place on 27th of March in Amsterdam. Today, our full line-up was revealed. Mobilism first-timers Petro Salema and Agnieszka Walorska are joined by veterans PPK, Seb Lee-Delisle, and Stephanie Rieger to create a nice mix of the new and the familiar.</description>
+   <guid>http://mobilism.nl/blog/2015/01/full-line-up-for-mobilism-2015</guid>
+   <pubDate>Tue, 20 Jan 2015 00:00:00 +0100</pubDate>
+  </item>
+  <item>
+   <title>Mobilism announces four speakers and a workshop</title>
+   <link>http://mobilism.nl/blog/2014/12/mobilism-announces-four-speakers-and-a-workshop</link>
+   <description>Today we announced four of our speakers, as well as a workshop. Early bird is over since all early-bird tickets have been sold. Tickets are now €275.</description>
+   <guid>http://mobilism.nl/blog/2014/12/mobilism-announces-four-speakers-and-a-workshop</guid>
+   <pubDate>Wed, 03 Dec 2014 00:00:00 +0100</pubDate>
+  </item>
+  <item>
+   <title>Mobilism 2015 announced</title>
+   <link>http://mobilism.nl/blog/2014/10/mobilism-2015-announced</link>
+   <description>On Friday 27th of March 2015 Mobilism will return after a break of a year. Where the first three editions were mostly occupied with web development for mobile phones, this edition is going to cast its net a little wider. We know how to make sites for iOS and Android now, but what's going to be next? Are you ready for TV? Connected devices? Proxy browsers? Come and see!</description>
+   <guid>http://mobilism.nl/blog/2014/10/mobilism-2015-announced</guid>
+   <pubDate>Wed, 29 Oct 2014 00:00:00 +0100</pubDate>
+  </item>
+  <item>
+   <title>Mobilism speaker change and workshops</title>
+   <link>http://mobilism.nl/blog/2013/05/mobilism-speaker-change-and-workshops</link>
+   <description>In two weeks' time the third edition of Mobilism will take place in Amsterdam. Tickets are still available; in fact, as Peter-Paul Koch recently wrote, ticket sales have not been overwhelming this year and we've had to economise. That's why we will sit down and think hard about Mobilism's future once the conference is done and dusted.</description>
+   <guid>http://mobilism.nl/blog/2013/05/mobilism-speaker-change-and-workshops</guid>
+   <pubDate>Fri, 03 May 2013 00:00:00 +0200</pubDate>
+  </item>
+  <item>
+   <title>Finalising our programme</title>
+   <link>http://mobilism.nl/blog/2013/04/finalising-our-programme</link>
+   <description>In six weeks Mobilism, the conference we started two years ago, will take place in Amsterdam for the third time. Today we're finalising our programme with two more speakers and three extra half-day web app development workshops on the Wednesday before the conference.</description>
+   <guid>http://mobilism.nl/blog/2013/04/finalising-our-programme</guid>
+   <pubDate>Thu, 04 Apr 2013 00:00:00 +0200</pubDate>
+  </item>
+ </channel>
+</rss>

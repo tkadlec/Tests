@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width" />
+        <title>Web components Examples</title>
+        <link rel="import" href="wc/details-decorator/index.html">
+        <style>
+            body {
+                font: 100%/1.4em "Helvetica Neue",Helvetica,Arial,sans-serif;
+                color: #404040;
+            }
+            a {
+                color: #404040;
+                text-decoration: none;
+                display: block;
+                padding: .5em;
+            }
+            h2 {
+                margin: 1.5em 0 .5em 0;
+            }
+            a:hover{
+                background: #eee;
+            }
+            #wrap {
+                max-width: 40em;
+                margin: auto;
+            }
+            /* Component stuff */
+            details[open] {
+            	decorator: url(#details-open);
+            }
+        </style>
+    </head>
+    <body>
+    	<div id="wrap">
+    		<h1>Web component experiments</h1>
+    		<h2>This is a details element using a decorator.</h2>
+			<details open>
+			    <summary>Timepieces</summary>
+			    <ul>
+			      <li>Sundial</li>
+			      <li>Cuckoo clock</li>
+			      <li>Wristwatch</li>
+			    </ul>
+			</details>
+			
+    	</div>
+    </body>
+</html>

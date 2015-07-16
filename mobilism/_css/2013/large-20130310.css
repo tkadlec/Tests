@@ -1,0 +1,83 @@
+.container {
+    position: relative;
+    overflow:visible;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.content {
+    position:static;
+    max-width: 900px;
+    padding-left: 33.9267015706806%; 
+    padding-top: 88px;
+}
+.maincontent {
+    background-image: -webkit-linear-gradient(rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%);
+    background-image: -moz-linear-gradient(rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%);
+    background-image: -ms-linear-gradient(rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%);
+    background-image: -o-linear-gradient(rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%);
+    min-height: 700px;
+}
+header > a {
+    position: absolute;
+    top: 28px;
+    left: 4em;
+    display: block;
+    width: 210px;
+}
+    header img {
+        width: 210px;
+        padding-top: 0;
+    }
+nav {
+    position: absolute;
+    margin: 0;
+    text-align: right;
+    top: 14em;
+    left: 0;
+    padding: 0 0 0 1em;
+    width: 190px;
+}
+nav .nav {
+    position: static;
+}
+    .sub {
+        width: 100%;
+        left: 0;
+        margin-top: 1em;
+    }
+        .sub li {
+            display: list-item;
+            width: inherit;
+        }
+        .sub h2,
+        .sub ul {
+            padding-right: 8px;
+        }
+        .sub a {
+            padding-bottom: 0;
+        }
+.feature .teaser {
+    border-left: none;
+}
+    .feature .teaser,
+    #speakerroll {
+        margin-left: 0;
+    }
+.feature>h2 {
+    padding: 0;
+}
+aside {
+    background-color:#e2d8ca;
+    position: absolute;
+    top: 28em;
+    left: 0;
+    width: 23.6649%;
+    padding-left: 2em;
+    border-top: none;
+    border-right: 4px solid #c0b8b4;
+    border-bottom: 4px solid #c0b8b4;
+    
+}
+aside.withsub {
+    top: 35em;
+}

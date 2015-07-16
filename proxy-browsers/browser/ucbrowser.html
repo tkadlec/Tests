@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>UC Browser</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="/proxy-browsers/css/style.css">
+</head>
+<body>
+	<div id="wrap">
+		<h1>UC Browser</h1>
+		<p>UC Browser is a proxy browser that focuses on both decreasing bandwidth. Pages are requested by their servers, but rendered on the device.</p>
+		<h2>Summary</h2>
+		<table class="striped">
+			<tbody>
+				<tr>
+					<th>Data Savings</th>
+					<td>Up to 60%</td>
+				</tr>
+				<tr>
+					<th>HTTPS Behavior</th>
+					<td>Bypasses proxy</td>
+				</tr>
+				<tr>
+					<th>Network Optimization</th>
+					<td>Not sure</td>
+				</tr>
+				<tr>
+					<th>Transcoding/Compressing Images</th>
+					<td>Yes</td>
+				</tr>
+				<tr>
+					<th>Content compression</th>
+					<td>Yes, if Cloud Boost is on.</td>
+				</tr>
+				<tr>
+					<th>X-Forwarded-For Header</th>
+					<td>Yes</td>
+				</tr>
+				<tr>
+					<th>Additional Headers</th>
+					<td>HTTP_X_UCBROWSER_UA</td>
+				</tr>
+				<tr>
+					<th>Cache-control: no-transform</th>
+					<td>Not sure</td>
+				</tr>
+				<tr>
+					<th>Rendering Behavior</th>
+					<td>Done on client</td>
+				</tr>
+				<tr>
+					<th>Rendering Engine</th>
+					<td>WebView</td>
+				</tr>
+			</tbody>
+		</table>
+		<h2>Basic Architecture</h2>
+		<p>When the client makes a request, the request is routed through UC's servers if Cloud Boost is enabled. The servers perform the initial DNS resolution. They also initiate each request over their own networks, optimize the response, and then pass back to the client. The pages are rendered on the client, and all JS execution takes place on the client.</p>
+		<h2>Gotchas</h2>
+		<ul>
+			<li>Using WebView</li>
+			<li>Does not appear to support @media with no declared type</li>
+		</ul>
+		<h2>Resources</h2>
+		<ul>
+			<li><a href="http://www.ucweb.com/download/UCBrowser_User_Agent_en.pdf">User Agent and X-UCBrowser-UA Specification of UC Browser</a></li>
+			<li><a href="http://www.uc.cn/business/developer/">Developer Portal (Chinese)</a></li>
+			<li><a href="http://ceoworld.biz/ceo/2014/03/14/xiaopeng-he-founder-and-president-of-uc-browser-talks-about-the-about-the-technology-behind-the-most-popular-mobile-browser-99209817">Interview with Xiaopeng He UC Browser Architecture</a></li>
+		</ul>
+	</div>
+</body>
+</html>

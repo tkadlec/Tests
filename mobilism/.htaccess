@@ -1,0 +1,7 @@
+<FilesMatch "\.(css|jpg|png)$">
+    <IfModule mod_headers.c>
+        Header set Pragma "public"
+        Header set Cache-Control "no-transform,public, must-revalidate, proxy-revalidate"
+    </IfModule>
+    FileETag MTime Size
+</FilesMatch>

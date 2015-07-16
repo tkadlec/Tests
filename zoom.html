@@ -1,0 +1,21 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Zoom detect</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+	<p>Just a simple test to see if we can detect when a site gets zoomed in on.</p>
+
+	<script>
+
+		var screenCssPixelRatio = document.body.clientWidth / window.innerWidth;
+		alert(screenCssPixelRatio);
+
+		window.addEventListener('resize', function() {
+			var screenCssPixelRatio = document.body.clientWidth / window.innerWidth;
+		alert(screenCssPixelRatio);
+		})
+	</script>
+</body>
+</html>

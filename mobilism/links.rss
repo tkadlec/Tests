@@ -1,0 +1,45 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <title>Mobilism links</title>
+  <description>Mobilism links</description>
+  <link>http://mobilism.nl/links</link>
+  <language>en</language>
+  <generator>QMS</generator>
+  <atom:link href="http://mobilism.nl/links.rss" rel="self" type="application/rss+xml" />
+  <item>
+   <title>Why it may be time to stop using jQuery</title>
+   <link>http://mobilism.nl/blog/2013/04/why-it-may-be-time-to-stop-using-jquery</link>
+   <description>http://professionalaspnet.com/archive/2013/04/14/Why-Its-Time-to-Sunset-jQuery.aspx</description>
+   <guid>http://mobilism.nl/blog/2013/04/why-it-may-be-time-to-stop-using-jquery</guid>
+   <pubDate>Tue, 16 Apr 2013 00:00:00 +0200</pubDate>
+  </item>
+  <item>
+   <title>The effects of Blink's split-off from WebKit</title>
+   <link>http://mobilism.nl/blog/2013/04/the-effects-of-blinks-split-off-from-webkit</link>
+   <description>http://hypercritical.co/2013/04/12/code-hard-or-go-home</description>
+   <guid>http://mobilism.nl/blog/2013/04/the-effects-of-blinks-split-off-from-webkit</guid>
+   <pubDate>Mon, 15 Apr 2013 00:00:00 +0200</pubDate>
+  </item>
+  <item>
+   <title>The Internet in 1995</title>
+   <link>http://mobilism.nl/blog/2013/04/the-internet-in-1995</link>
+   <description>http://www.washingtonpost.com/blogs/wonkblog/wp/2013/03/29/what-the-internet-looked-like-in-1995/</description>
+   <guid>http://mobilism.nl/blog/2013/04/the-internet-in-1995</guid>
+   <pubDate>Mon, 15 Apr 2013 00:00:00 +0200</pubDate>
+  </item>
+  <item>
+   <title>What can we expect from IE11?</title>
+   <link>http://mobilism.nl/blog/2013/04/what-can-we-expect-from-ie11</link>
+   <description>http://generatedcontent.org/post/47216611856/ie11</description>
+   <guid>http://mobilism.nl/blog/2013/04/what-can-we-expect-from-ie11</guid>
+   <pubDate>Mon, 08 Apr 2013 00:00:00 +0200</pubDate>
+  </item>
+  <item>
+   <title>Element queries instead of media queries?</title>
+   <link>http://mobilism.nl/blog/2013/04/element-queries-instead-of-media-queries</link>
+   <description>http://ianstormtaylor.com/media-queries-are-a-hack/</description>
+   <guid>http://mobilism.nl/blog/2013/04/element-queries-instead-of-media-queries</guid>
+   <pubDate>Mon, 08 Apr 2013 00:00:00 +0200</pubDate>
+  </item>
+ </channel>
+</rss>

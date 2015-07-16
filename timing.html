@@ -1,0 +1,156 @@
+
+<!doctype html>
+<html>
+
+<head>
+<title>Image Custom Metric</title>
+
+<script>
+var bNav = window.performance;
+var bRT = (window.performance && window.performance.getEntries);
+var bMO = ( "undefined" != typeof(MutationObserver) );
+var t_top = new Date().getTime();
+var t_onload, t_img, t_script;
+
+
+// Used by Mutation Observer.
+function observerCallback(mutations) {
+    if ( !mutations || !mutations.length ) {
+        return;
+    }
+ 
+    mutations.forEach( function(mutation) {
+            if ( mutation.type === "attributes" ) {
+                // we can check if the changed attribute values are interesting to us
+                // mutation.target is the node that changed and mutation.attributeName
+                // is the attribute that changed
+            }
+            else if ( mutation.type === "childList" ) {
+                // mutation.addedNodes is not a real array, so convert it to one
+                [].slice.call(mutation.addedNodes).forEach(function(node) {
+                        if ( node.nodeType === Node.ELEMENT_NODE && "undefined" !== typeof(ghKeyElements[node.id]) ) {
+                            // offsetHeight and offsetWidth are set when something is rendered to screen
+                            var delta = new Date().getTime() - t_top;
+                            if ( node.naturalWidth ) {
+                                ghKeyElements[node.id].push("" + delta + " ms");
+                            }
+                            else {
+                                ghKeyElements[node.id].push("" + delta + " ms");
+                            }
+                        }
+                    });
+            }
+        });
+}
+
+
+// Poll to see when images are rendered.
+function imagePolling() {
+    var bPoll = false; // do NOT continue polling unless we have to
+
+    for ( var id in ghImagePolling ) {
+        if ( ghImagePolling.hasOwnProperty(id) ) {
+            var elem = document.getElementById(id);
+            if ( elem && "IMG" == elem.tagName && elem.offsetHeight ) {
+                ghImagePolling[id] = new Date().getTime();
+            }
+            else {
+                bPoll = true;
+            }
+        }
+    }
+
+    if ( bPoll ) {
+        setTimeout(imagePolling, 100);
+    }
+}
+
+
+// a hash of element IDs we want to observe where the value is an array of mutation times
+var ghKeyElements = { heroimg: [], calltoaction: [] };
+if ( bMO ) {
+    var observer = new MutationObserver(observerCallback);
+    observer.observe(document, { childList: true, attributes: true, subtree: true });
+}
+
+var ghImagePolling = { heroimg: 0 }; // a hash of image IDs and their offsetHeight time
+imagePolling();
+
+window.onload = function() {
+    t_onload = new Date().getTime();
+
+    var imageEntry, cssEntry;
+    if ( bRT ) {
+        var aEntries = performance.getEntries();
+        for ( var i = 0, len = aEntries.length; i < len; i++ ) {
+            var e = aEntries[i];
+            if ( -1 != e.name.indexOf("resource.cgi?type=gif") ) {
+                imageEntry = e;
+            }
+            else if ( -1 != e.name.indexOf("resource.cgi?type=css") ) {
+                cssEntry = e;
+            }
+        }
+    }
+
+    var t_onloadhandler = t_img - t_top;
+    var t_inlinescript = t_afterImage - t_top;
+    var t_custommetric = Math.max(t_onloadhandler, t_inlinescript);
+
+    document.getElementById("resourcetiming").innerHTML = ( imageEntry ? Math.round(imageEntry.fetchStart + imageEntry.duration) + " ms" : "not supported" );
+    document.getElementById("onloadhandler").innerHTML = t_onloadhandler + " ms";
+    document.getElementById("inlinescript").innerHTML = t_inlinescript + " ms";
+    document.getElementById("mutobserver").innerHTML = ( bMO ? ghKeyElements["heroimg"].join(", ") : "not supported" );
+    document.getElementById("polling").innerHTML = ( ghImagePolling["heroimg"] ? (ghImagePolling["heroimg"] - t_top) + " ms" : "not found" );
+    document.getElementById("custommetric").innerHTML = t_custommetric + " ms";
+
+    document.getElementById("bnavtiming").innerHTML = ( bNav ? "" : "Nav timing not supported." );
+}
+</script>
+
+<script src="//stevesouders.com/bin/resource.cgi?type=js&sleep=3&t=1429640818" onload="t_script=new Date().getTime()"></script>
+
+<link href="//stevesouders.com/bin/resource.cgi?type=css&sleep=5&t=1429640818" rel="stylesheet">
+
+<style type="text/css">
+@font-face {
+  font-family: "Yanone";
+  src: url('/bin/resource.cgi?type=font&sleep=7&t=1429640818');
+  src: local('Yanone'), url('/bin/resource.cgi?type=font&sleep=6&t=1429640818') format("truetype");
+}
+
+TD { padding: 10px 20px; }
+.timing { font-size: 2em; text-align: right; }
+.timeval { font-size: 3em; color: orange; font-weight: bold; text-align: right; }
+</style>
+
+</head>
+
+<body style="width: 900px; font-family: helvetica, arial; background: #000; color: #FFF;">
+
+<h1 style="margin-left: 3em; font-size: 3em;">Image Custom Metric</h1>
+
+<!-- This is to see if fonts have an affect, but I know they do not so I hide the text to make the page cleaner. -->
+<div style="font-family: Yanone; color: black">Image Custom Metric</div>
+
+<div style="float: left; background: white; margin-bottom: 2em; margin-left: 3em; padding: 4px;">
+<img id=heroimg src="//stevesouders.com/bin/resource.cgi?type=gif&sleep=1&t=1429640818" onload="t_img=new Date().getTime()" height=50>
+</div>
+
+<script>
+var t_afterImage = new Date().getTime();
+</script>
+
+<table style="clear: both;">
+  <tr> <td class=timing>RESOURCE TIMING:</td> <td class="timeval" id=resourcetiming>...</td> </tr>
+  <tr> <td class=timing>IMAGE ONLOAD:</td> <td class="timeval" id=onloadhandler>...</td> </tr>
+  <tr> <td class=timing>INLINE SCRIPT:</td> <td class="timeval" id=inlinescript>...</td> </tr>
+  <tr> <td class=timing>MUTATION OBSERVER:</td> <td class="timeval" id=mutobserver>...</td> </tr>
+  <tr> <td class=timing>offsetHeight POLLING:</td> <td class="timeval" id=polling>...</td> </tr>
+  <tr> <td class=timing>CUSTOM METRIC:</td> <td class="timeval" id=custommetric>...</td> </tr>
+</table>
+
+<p id="bnavtiming">
+</p>
+</body>
+</html>

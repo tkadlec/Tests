@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>UC Browser</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="/proxy-browsers/css/style.css">
+</head>
+<body>
+	<div id="wrap">
+		<h1>UC Mini</h1>
+		<p>UC Mini is a proxy browser that focuses on both decreasing bandwidth and reducing impact on devices. Pages are requested by their servers, and rendered on the server.</p>
+		<h2>Summary</h2>
+		<table class="striped">
+			<tbody>
+				<tr>
+					<th>Data Savings</th>
+					<td>Up to 90%</td>
+				</tr>
+				<tr>
+					<th>HTTPS Behavior</th>
+					<td>Still routes through proxy</td>
+				</tr>
+				<tr>
+					<th>Network Optimization</th>
+					<td>Not sure</td>
+				</tr>
+				<tr>
+					<th>Transcoding/Compressing Images</th>
+					<td>Yes</td>
+				</tr>
+				<tr>
+					<th>Content compression</th>
+					<td>Yes, if Speed Mode is on (default behavior).</td>
+				</tr>
+				<tr>
+					<th>X-Forwarded-For Header</th>
+					<td>Yes</td>
+				</tr>
+				<tr>
+					<th>Additional Headers</th>
+					<td>HTTP_X_UCBROWSER_UA, HTTP_X_UCBROWSER_DEVICE_UA</td>
+				</tr>
+				<tr>
+					<th>Cache-control: no-transform</th>
+					<td>No</td>
+				</tr>
+				<tr>
+					<th>Rendering Behavior</th>
+					<td>Done on server</td>
+				</tr>
+				<tr>
+					<th>Rendering Engine</th>
+					<td>U3 or U2 Kernel, based on WebKit</td>
+				</tr>
+			</tbody>
+		</table>
+		<h2>Basic Architecture</h2>
+		<p>When the client makes a request, if Speed Mode is disabled, the browser simply interacts with a website in the traditional manner, making use of a WebView. If Speed Mode is enabled (default mode) the request is routed through UC's servers. The servers perform the initial DNS resolution. They also initiate each request over their own networks (sending an X-Forwarded-For header). The pages are rendered on the server, and all JS execution takes place on the server.</p>
+		<p>The page is sent back to the client in a proprietary format. Whenever something happens that may change the DOM or Render Tree, the client makes a request to the server. The server sends back the updated snapshot of the page for the client to display.</p>
+
+		<h2>Gotchas</h2>
+		<ul>
+			<li>Switches viewport to 1024px, but forces single column layout</li>
+			<li>Appears like a "modern" browser—supports media queries, cuts the mustard</li>
+			<li>Dismisses certain styles</li>
+			<li>No SVG support (claims it though). No <code>onerror</code> fire for images.</li>
+			<li>No icon font support.</li>
+			<li>DPR not supported</li>
+			<li>clientWidth and clientHeight don't work</li>
+			<li>Font size adjusts zoom, but doesn't impact actual font-size, or ems, or any size dimensions.</li>
+			<li>navigator.userAgent doesn't match actual UA</li>
+		</ul>
+		<h2>Resources</h2>
+		<ul>
+			<li><a href="http://www.ucweb.com/download/UCBrowser_User_Agent_en.pdf">User Agent and X-UCBrowser-UA Specification of UC Browser</a></li>
+			<li><a href="http://www.uc.cn/business/developer/">Developer Portal (Chinese)</a></li>
+			<li><a href="http://ceoworld.biz/ceo/2014/03/14/xiaopeng-he-founder-and-president-of-uc-browser-talks-about-the-about-the-technology-behind-the-most-popular-mobile-browser-99209817">Interview with Xiaopeng He UC Browser Architecture</a></li>
+		</ul>
+	</div>
+</body>
+</html>

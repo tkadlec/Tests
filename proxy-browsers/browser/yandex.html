@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Yandex Turbo</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="/proxy-browsers/css/style.css">
+</head>
+<body>
+	<div id="wrap">
+		<h1>Yandex Turbo</h1>
+		<p>Yandex Turbo mode is based on Opera Turbo and optimizes non-secure traffic.</p>
+		<h2>Summary</h2>
+		<table class="striped">
+			<tbody>
+				<tr>
+					<th>Data Savings</th>
+					<td>???</td>
+				</tr>
+				<tr>
+					<th>HTTPS Behavior</th>
+					<td>Bypasses proxy</td>
+				</tr>
+				<tr>
+					<th>Network Optimization</th>
+					<td>Unclear</td>
+				</tr>
+				<tr>
+					<th>Transcoding/Compressing Images</th>
+					<td>Compression</td>
+				</tr>
+				<tr>
+					<th>Content compression</th>
+					<td>Compresses all content</td>
+				</tr>
+				<tr>
+					<th>X-Forwarded-For Header</th>
+					<td>Yes</td>
+				</tr>
+				<tr>
+					<th>Additional Headers</th>
+					<td>HTTP_X_CONTENT_OPT, HTTP_X_YANDEX_TURBO, HTTP_X_OPERA_INFO</td>
+				</tr>
+				<tr>
+					<th>Cache-control: no-transform</th>
+					<td>Yes</td>
+				</tr>
+				<tr>
+					<th>Rendering Behavior</th>
+					<td>Done on Browser</td>
+				</tr>
+				<tr>
+					<th>Rendering Engine</th>
+					<td>Blink</td>
+				</tr>
+			</tbody>
+		</table>
+		<h2>Basic Architecture</h2>
+		<p>If Turbo Mode is enabled, the client makes a request, the request is routed through Yandex's servers. The servers initiate each request over their own networks (sending an X-Forwarded-For header) and compresses them.</p>
+		<p>Turbo mode is automatically triggered if the connection speed falls below 128 Kbit/s. It will remain on until the speed exceeds 512 Kbit/s. Turbo mode can also be enabled or disabled by the user.</p>
+		<p>With Turbo mode enabled, mutlimedia is hidden by default. </p>
+
+		<h2>Resources</h2>
+		<ul>
+			<li><a href="https://help.yandex.com/newbrowser/search-and-browse/turbo.xml">Yandex Turbo Help</a></li>
+		</ul>
+	</div>
+</body>
+</html>

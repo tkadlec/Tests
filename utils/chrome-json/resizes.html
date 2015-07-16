@@ -1,0 +1,90 @@
+<html>
+	<head>
+		<title>Parse JSON</title>
+	</head>
+	<body>
+	Attempting to parse Chrome JSON	
+
+		<div id="results">
+			
+		</div>
+	</body>
+	<script type="text/javascript" src="reqwest.js"></script>
+	<script>
+	var totalResizes = 0,
+		totalTime = 0,
+		totalCount = 0;
+
+	var chromeParser = {
+		config: {
+			jData: ''
+		},
+		getResizes: function() {
+			var self = this,
+				count = 0,
+				runningTotal = 0,
+				JSON = self.config.jData,
+				childs = '',
+				grandChild = '',
+				type = 'ResizeImage';
+
+			for (var i = JSON.length - 1; i >= 0; i--) {
+				if (JSON[i].children && JSON[i].children.length > 0) {
+					//first generation
+					childs = JSON[i].children;
+
+					for (var j =childs.length - 1; j >= 0; j--) {
+						//second generation
+						if (childs[j].type == 'Paint') {
+
+							if (childs[j].children.length > 0) {
+								//now loop for decode
+								grandChild = childs[j].children;
+
+								for (var k = grandChild.length - 1; k >= 0; k--) {
+									if (grandChild[k].type == 'ResizeImage') {
+										count++;
+										runningTotal += (grandChild[k].endTime - grandChild[k].startTime);
+									}
+								};
+							}
+						}
+					};
+				}
+			};
+			return new Array(count, runningTotal);
+		},
+
+		init : function(url) {
+			var self = this,
+			decodes = '',
+			results = document.getElementById('results');
+
+			reqwest(url, function (resp) {
+				totalCount++;
+				self.config.jData = resp;
+				resizes = self.getResizes();
+				totalResizes += resizes[0];
+				totalTime += resizes[1];
+
+				results.innerHTML += resizes[0] + " resizes for a total of " + resizes[1] + "ms<br/>";
+
+			});
+		}
+	}
+	var profileCount = 1;
+	while (profileCount <= 10) {
+		chromeParser.init('timelines/large-chrome-' + profileCount + '.json');
+		profileCount++;
+	}
+	setTimeout(function() {
+		var results = document.getElementById('results');
+		results.innerHTML += '<p>AVERAGES:<br/>';
+		results.innerHTML += 'Resize Count: ' + totalResizes / totalCount + '<br/>';
+		results.innerHTML += 'Time: ' + totalTime / totalCount + '<br/>';
+	}, 2000);
+	
+
+
+	</script>
+</html>
