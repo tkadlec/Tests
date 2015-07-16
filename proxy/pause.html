@@ -1,0 +1,55 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Testing paused script</title>
+	<style>
+	#box{
+		height: 100px;
+		width: 100px;
+		background: #000;
+	}
+	</style>
+</head>
+<body>
+	<h1>Testing long running scripts</h1>
+	<div id="box"></div>
+	<div id="valofnewcol"></div>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis earum non ullam ea ipsa sequi ab inventore eveniet. Excepturi quas expedita unde culpa laboriosam. Inventore excepturi voluptas delectus, quo quaerat!</p>
+		<p>Porro deleniti sed magni perferendis excepturi rerum suscipit aliquid recusandae nobis id asperiores praesentium et expedita, odio veritatis ut delectus ex velit voluptatum distinctio nemo, quasi enim. Cupiditate, tenetur, rem?</p>
+		<p>Porro ullam sed voluptates nostrum omnis quam ipsa hic perspiciatis alias officia. Magni atque vero soluta quidem excepturi itaque a inventore id minus iusto ea assumenda ad voluptatum, repudiandae possimus.</p>		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis earum non ullam ea ipsa sequi ab inventore eveniet. Excepturi quas expedita unde culpa laboriosam. Inventore excepturi voluptas delectus, quo quaerat!</p>
+		<p>Porro deleniti sed magni perferendis excepturi rerum suscipit aliquid recusandae nobis id asperiores praesentium et expedita, odio veritatis ut delectus ex velit voluptatum distinctio nemo, quasi enim. Cupiditate, tenetur, rem?</p>
+		<p>Porro ullam sed voluptates nostrum omnis quam ipsa hic perspiciatis alias officia. Magni atque vero soluta quidem excepturi itaque a inventore id minus iusto ea assumenda ad voluptatum, repudiandae possimus.</p>		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis earum non ullam ea ipsa sequi ab inventore eveniet. Excepturi quas expedita unde culpa laboriosam. Inventore excepturi voluptas delectus, quo quaerat!</p>
+		<p>Porro deleniti sed magni perferendis excepturi rerum suscipit aliquid recusandae nobis id asperiores praesentium et expedita, odio veritatis ut delectus ex velit voluptatum distinctio nemo, quasi enim. Cupiditate, tenetur, rem?</p>
+		<p>Porro ullam sed voluptates nostrum omnis quam ipsa hic perspiciatis alias officia. Magni atque vero soluta quidem excepturi itaque a inventore id minus iusto ea assumenda ad voluptatum, repudiandae possimus.</p>
+	<script>
+	var box = document.getElementById('box'),
+	update = document.getElementById('valofnewcol'),
+	start = 0;
+
+changecolor = function(element, degreeshift, update) {
+	var newcol = (start * degreeshift) / 360 << 8,
+	col = 'hsl(' + newcol + ', 100%, 50%)',
+	coltxt = document.createTextNode(col),
+	anim,
+	restart;
+
+	element.style.background = col;
+	start++;
+
+	if (update.firstChild) {
+		update.replaceChild(coltxt, update.firstChild);
+	} else {
+		update.appendChild(coltxt);
+	}
+}
+
+anim = setInterval(changecolor, 50, box, 45, update);
+
+// Unpauses the interval
+restart = function(){
+	// This can be an empty function
+}
+box.addEventListener('click', restart, false);
+</script>
+</body>
+</html>

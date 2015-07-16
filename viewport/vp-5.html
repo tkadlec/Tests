@@ -1,31 +1,28 @@
 <html>
     <head>
-        <title>Viewport testing</title>
-
+        <title>Viewport test: Meta</title>
+        <meta name="viewport" content="width=device-width" />
+           <meta name="layoutmode" content="fitscreen" />
         <style>
         body {
                 font: 100%/1.4em "Helvetica Neue",Helvetica,Arial,sans-serif;
-                color: #404040;
+
             }
-            h1{
-                line-height: 1.2em;
-            }
+
         #results{
             margin-bottom: 4em;
-        }
-                    #wrap {
+        }            #wrap {
                 max-width: 40em;
                 margin: auto;
             }
-        @-ms-viewport{
-            width: device-width;
-        }
             @media screen and (min-width: 320px) {
                 .d400,
                 .d500,
                 .d600,
                 .d700,
-                .d768 {
+                .d768,
+                .d1000,
+                .d1200 {
                     display: none;
                 }
             }
@@ -34,7 +31,9 @@
                 .d500,
                 .d600,
                 .d700,
-                .d768 {
+                .d768,
+                .d1000,
+                .d1200 {
                     display: none;
                 }
                 .d400 {
@@ -46,7 +45,9 @@
                 .d400,
                 .d600,
                 .d700,
-                .d768 {
+                .d768,
+                .d1000,
+                .d1200 {
                     display: none;
                 }
                 .d500 {
@@ -58,7 +59,9 @@
                 .d400,
                 .d500,
                 .d700,
-                .d768 {
+                .d768,
+                .d1000,
+                .d1200 {
                     display: none;
                 }
                 .d600 {
@@ -70,7 +73,9 @@
                 .d400,
                 .d600,
                 .d500,
-                .d768 {
+                .d768,
+                .d1000,
+                .d1200 {
                     display: none;
                 }
                 .d700 {
@@ -82,10 +87,40 @@
                 .d400,
                 .d600,
                 .d500,
-                .d700 {
+                .d700,
+                .d1000,
+                .d1200 {
                     display: none;
                 }
                 .d768 {
+                    display: block;
+                }
+            }
+            @media screen and (min-width: 1024px) {
+                .d320, 
+                .d400,
+                .d600,
+                .d500,
+                .d700,
+                .d768,
+                .d1200 {
+                    display: none;
+                }
+                .d1000 {
+                    display: block;
+                }
+            }
+            @media screen and (min-width: 1200px) {
+                .d320, 
+                .d400,
+                .d600,
+                .d500,
+                .d700,
+                .d768,
+                .d1000 {
+                    display: none;
+                }
+                .d1200 {
                     display: block;
                 }
             }
@@ -93,7 +128,7 @@
     </head>
     <body>
         <div id="wrap">
-        <h1>CSS Device Adaptation</h1>
+        <h1>Meta Tag</h1>
 
         <div id="results">
             <div class="d320"><strong>Applied:</strong> &gt;= 320px</div>
@@ -102,10 +137,12 @@
             <div class="d600"><strong>Applied:</strong> &gt;= 600px</div>
             <div class="d700"><strong>Applied:</strong> &gt;= 700px</div>
             <div class="d768"><strong>Applied:</strong> &gt;= 768px</div>
+            <div class="d1000"><strong>Applied:</strong> &gt;= 1000px</div>
+            <div class="d1200"><strong>Applied:</strong> &gt;= 1200px</div>
 
             <p id="screen-width"></p>
             <p id="window-width"></p>
-
+            <p id="mustard"></p>
         </div>
         
 
@@ -115,7 +152,14 @@
             <li><a href="vp-2.html">Test with CSS Device Adaptation</a></li>
             <li><a href="vp-3.html">Test with both CSS Device Adaptation and Meta Tag</a></li>
         </ul>
-    </div>
+        </div>
+        <script>
+        if( 'querySelector' in document && 'localStorage' in window && 'addEventListener' in window ){
+        var mustard = document.getElementById('mustard');
+        mustard.innerHTML = 'cuts';
+
+    }
+    </script>
         <script>
             window.onload =function () {
                 var theScreen = document.getElementById('screen-width');

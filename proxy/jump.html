@@ -1,0 +1,29 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Jump Link test</title>
+</head>
+<body>
+	<h1>Jump Links</h1>
+	<p><a id="trigger" href="#bottom">Go to bottom, onclick event</a></p>
+	<p><a href="#id-bottom">Go to bottom using id</a></p>
+	<p>The first link has an onclick listener attached. It does nothing other than return true. The second has no JS attached to it.</p>
+	<hr />
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum animi, fuga dolorem dolore veritatis beatae temporibus sint repellendus quaerat assumenda ducimus amet maiores odit excepturi alias ut rem provident natus!</p>
+	<p>Rem dolores labore blanditiis accusantium, autem, provident quis eaque quo. Veritatis voluptatem magnam officiis eos animi tempore, suscipit architecto nam esse atque ipsam unde doloribus beatae laborum, minima, voluptatibus hic?</p>
+	<p>Quasi, atque et dolores autem sunt, odit unde sapiente vero quibusdam sit explicabo aliquid. Non voluptatum, est quia officiis, p molestiae a qui ratione fuga. Debitis accusamus exercitationem, dolor quam?</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore eveniet esse praesentium libero, sint, laudantium incidunt neque iure quasi amet at provident! Ipsa reprehenderit tenetur odit omnis hic ad id?</p>
+	<p>Perferendis magni, explicabo perspiciatis amet accusantium nostrum vel deserunt necessitatibus unde modi tempore corporis totam similique illum harum quaerat nesciunt nihil. Necessitatibus dignissimos facilis delectus voluptatem aut alias. Hic, repellat.</p>
+	<p>Inventore quidem aliquam rem eaque nobis quae cum consequatur, fugit delectus eligendi eveniet autem iste quisquam error nesciunt ipsam reiciendis saepe ipsa. Illo hic cum similique odio nulla libero nostrum.</p>
+	<div id="testing"></div>
+	<nav id="bottom">I am the bottom</nav>
+
+	<nav id="id-bottom">I am the bottom, with an id</nav>
+	<script>
+	var trigger = document.getElementById('trigger');
+	trigger.onclick = function(){
+		return true;
+	} 
+	</script>
+</body>
+</html>

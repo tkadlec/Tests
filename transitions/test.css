@@ -1,0 +1,27 @@
+
+#msg
+  transform-style: preserve-3d;
+}
+
+#val-cat {
+  transition: transform .3s ease-out;
+}
+
+#val-cat:hover {
+  transform: scale(1.2);
+}
+
+#msg {
+  animation: slideUp .6s ease-out,
+              fadeUp .2s ease-in;
+}
+
+@keyframes slideUp {
+  0% {transform: translateY(300px) rotateX(-20deg);}
+  100% {transform: translateY(0) rotateX(0);} 
+}
+
+@keyframes fadeUp {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}

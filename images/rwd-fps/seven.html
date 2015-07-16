@@ -1,6 +1,7 @@
 <html>
 <head>
     <title>Testing the impact of image scaling</title>
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
     <meta name="format-detection" content="telephone=no" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <style type="text/css">
@@ -16,14 +17,19 @@
             width: 100%;
             max-width: 100%;
         }
+        #image-contain{
+            display: block;
+            width: 100%;
+            overflow: hidden;
+        }
         .menu, .menu li{
-        	list-item-type: none;
-        	padding-left: 0;
-        	margin-left: 0;
+            list-item-type: none;
+            padding-left: 0;
+            margin-left: 0;
         }
         .menu li{
-        	display: inline;
-			margin-right: 3em;
+            display: inline;
+            margin-right: 3em;
         }
     </style>
 </head>
@@ -33,24 +39,24 @@
         <li><a href="double.html">Double Size</a></li>
         <li><a href="resized.html">Appropriate Size</a></li>
     </ul>
-    <h1>Testing the impact of image scaling: Resized</h1>
-    <p>The images below are approximately the correct size for which they are displayed at.</p>
+    <h1>Testing the impact of image scaling: Double-size with 4:2:2 Subsampling</h1>
+    <p>The images below are approximately 2x the size needed to display appropriately. The browser scales them down.</p>
     <input id="add" type="button" value="Add ten more images" />
     <h2>Image count: <span id="count">10</span></h2>
+    <div class="image"><img src="img/51/image1.jpg" alt=""></div>
+    <div class="image"><img src="img/51/image2.jpg" alt=""></div>
+    <div class="image"><img src="img/51/image3.jpg" alt=""></div>
+    <div class="image"><img src="img/51/image4.jpg" alt=""></div>
+    <div class="image"><img src="img/51/image5.jpg" alt=""></div>
+    <div class="image"><img src="img/51/image6.jpg" alt=""></div>
+    <div class="image"><img src="img/51/image7.jpg" alt=""></div>
+    <div class="image"><img src="img/51/image8.jpg" alt=""></div>
+    <div class="image"><img src="img/51/image9.jpg" alt=""></div>
+    <div class="image"><img src="img/51/image10.jpg" alt=""></div>
     
-    <div class="image"><img src="img/resized/image1.jpg" alt=""></div>
-    <div class="image"><img src="img/resized/image2.jpg" alt=""></div>
-    <div class="image"><img src="img/resized/image3.jpg" alt=""></div>
-    <div class="image"><img src="img/resized/image4.jpg" alt=""></div>
-    <div class="image"><img src="img/resized/image5.jpg" alt=""></div>
-    <div class="image"><img src="img/resized/image6.jpg" alt=""></div>
-    <div class="image"><img src="img/resized/image7.jpg" alt=""></div>
-    <div class="image"><img src="img/resized/image8.jpg" alt=""></div>
-    <div class="image"><img src="img/resized/image9.jpg" alt=""></div>
-    <div class="image"><img src="img/resized/image10.jpg" alt=""></div>
 
     <script type="text/javascript">
-        var prefix = 'img/resized/';
+        var prefix = 'img/51/';
         var imgCount = 10;
 
         var images = [

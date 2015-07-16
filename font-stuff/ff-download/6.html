@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <title>Font Stacks Test Four: Font-face loaded in media query that applies, used in media query that doesn't</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+        <style type="text/css">
+            body{
+              font-family: Helvetica, Arial, sans-serif;
+            }
+            #test{
+                width: auto;
+                height: auto;
+                margin: 0;
+                padding: 0;
+                border: 1px solid pink;
+            }
+            #results{
+                border: 1px solid #ccc;
+                padding: 1em;
+            }
+            .loaded{
+                color: green;
+            }
+            .noload{
+                color: red;
+            }
+            
+            @media (min-width: 100px) {
+                /* using -NS just incase someone actually has Orbitron installed on something somehow */
+            @font-face {
+                font-family: 'OrbitronLight-NS';
+                src: url('fonts/orbitron-light-webfont.woff') format('woff');
+                font-weight: normal;
+                font-style: normal;
+
+            }
+
+            }
+            @media (max-width: 99px) {
+                body{
+                    font-family: 'OrbitronLight-NS', Georgia, serif;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Testing @font-face downloads</h1>
+        <p>This test loads a @font-face and then only uses it within a min-width: 100px media query. This test is to see how @font-face assets get downloaded if the media query applies.</p>
+
+        <h2>Tests</h2>
+        <ul>
+            <li><a href="index.html">Unused Font-Face, no Media Query</a></li>
+            <li><a href="2.html">Font-Face used in media query that doesn't apply</a></li>
+            <li><a href="3.html">Font-Face used in media query that does apply</a></li>
+            <li><a href="4.html">Font-Face loaded in query that applies, used in one that doesn't</a></li>
+            <li><a href="4.html">Font-Face loaded and applied, but element is display:none</a></li>
+        </ul>
+    </body>
+</html>

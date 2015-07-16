@@ -2,6 +2,8 @@
     <head>
         <title>Viewport test: Meta</title>
         <meta name="viewport" content="width=device-width" />
+            <!-- <meta name="layoutmode" content="fitscreen" /> -->
+
         <style>
         body {
                 font: 100%/1.4em "Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -83,6 +85,19 @@
                     display: block;
                 }
             }
+            @media screen and (min-width: 768px) {
+                .d320, 
+                .d400,
+                .d600,
+                .d500,
+                .d700,
+                .d768 {
+                    display: none;
+                }
+                .d1000 {
+                    display: block;
+                }
+            }
         </style>
     </head>
     <body>
@@ -96,10 +111,11 @@
             <div class="d600"><strong>Applied:</strong> &gt;= 600px</div>
             <div class="d700"><strong>Applied:</strong> &gt;= 700px</div>
             <div class="d768"><strong>Applied:</strong> &gt;= 768px</div>
+            <div class="d1000"><strong>Applied:</strong> &gt;= 1000px</div>
 
             <p id="screen-width"></p>
             <p id="window-width"></p>
-
+            <p id="mustard"></p>
         </div>
         
 
@@ -110,6 +126,31 @@
             <li><a href="vp-3.html">Test with both CSS Device Adaptation and Meta Tag</a></li>
         </ul>
         </div>
+        <script>
+var hasStorage = (function() {
+    try {
+        localStorage.setItem("test", "mod" );
+        localStorage.removeItem("test");
+        return true;
+    } catch (exception) {
+        // console.info(exception);
+        if (exception && exception.name=="QuotaExceededError" && localStorage.length == 0) {
+            //private
+            return true;
+        } else {
+            return false;
+        }
+    }
+}());
+        if( 'querySelector' in document && hasStorage && 'addEventListener' in window ){
+        var mustard = document.getElementById('mustard');
+        mustard.innerHTML = 'cuts';
+
+    } else {
+        var mustard = document.getElementById('mustard');
+        mustard.innerHTML = 'no cuttin';
+    }
+    </script>
         <script>
             window.onload =function () {
                 var theScreen = document.getElementById('screen-width');

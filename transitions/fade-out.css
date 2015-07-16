@@ -1,0 +1,12 @@
+#grumpy_cat {
+  height: 100%;
+  left: 0;
+  top: 0;
+  width: 100%;
+  transition: opacity ease-in-out;
+}
+/* Fade out all elements on page over the duration inherited from the UA */
+* {
+  opacity: 0;
+  transition: 0.2s opacity ease-in-out;
+}

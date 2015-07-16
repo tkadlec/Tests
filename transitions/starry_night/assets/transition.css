@@ -1,0 +1,61 @@
+/* Copyright 2014 The Chromium Authors. All rights reserved.
+ * Use of this source code is governed by a BSD-style license that can be
+ * found in the LICENSE file. */
+
+/* @import url(http://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900); */
+
+@-webkit-keyframes animateLogo {
+  from { }
+  to {
+    left: 13.6px;
+    top: 13.199999809265137px;
+    width: 73.19999885559082px;
+    height: 25.59999942779541px;
+  }
+}
+
+@-webkit-keyframes animateSearchForm {
+  from { }
+  to {
+    left: 98.2px;
+    top: 4px;
+    width: 275px;
+    height: 38px;
+  }
+}
+
+@-webkit-keyframes animateSearchButton {
+  from { }
+  to {
+    left: 373px;
+    top: 4px;
+    width: 37px;
+    height: 38px;
+  }
+}
+
+#hplogo {
+  -webkit-animation: animateLogo 300ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  -webkit-transform:translateZ(0);
+}
+
+#searchform {
+  -webkit-animation: animateSearchForm 300ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  -webkit-transform:translateZ(0);
+}
+
+#searchbuttonDiv {
+  -webkit-animation: animateSearchButton 300ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  -webkit-transform:translateZ(1);
+}
+
+body {
+  background: transparent;
+  border: none;
+  height: 100%;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  width: 100%;
+}

@@ -1,0 +1,41 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Touch events</title>
+	<style>
+	.pointer{
+		cursor: pointer;
+	}
+	#result{
+		background:#333;
+		border-radius: 5px;
+		-webkit-border-radius: 5px;
+	}
+	</style>
+</head>
+<body>
+	<h1>Lazy</h1>
+
+<script id="lazy">
+function hotDog(){
+	return true;
+}
+// Make sure you strip out (or replace) comment blocks in your JavaScript first.
+/*
+JavaScript of lazy module
+*/
+</script>
+
+<script>
+  function lazyLoad() {
+    var lazyElement = document.getElementById('lazy');
+    var lazyElementBody = lazyElement.innerHTML;
+    var jsCode = stripOutCommentBlock(lazyElementBody);
+    eval(jsCode);
+  }
+</script>
+
+<div onclick=lazyLoad()> Lazy Load </div>
+</html>
+</body>
+</html>

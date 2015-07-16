@@ -5,7 +5,6 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<style type="text/css">
         body {
-                font: 100%/1.4em "Helvetica Neue",Helvetica,Arial,sans-serif;
                 color: #404040;
             }
 		div{
@@ -63,7 +62,7 @@
 
 		var results	= document.getElementById('results');
 		results.innerHTML = '<p>Font size is ' + size + 'px.</p>';
-
+		results.innerHTML += '<p>Computed: ' + window.getComputedStyle(document.documentElement,null).fontSize + '</p>';
 		// Fetch the Browserscope script that sucks the results from _bTestResults
 		(function() {
 			var _bTestKey = 'agt1YS1wcm9maWxlcnINCxIEVGVzdBic7MYQDA';
