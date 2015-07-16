@@ -6,9 +6,14 @@
 </head>
 <body>
 	<h1>HEADERS</h1>
-	<pre>
+
 	<?php
-	print_r($_SERVER);
+	$heckno = array("PATH", "DOCUMENT_ROOT", "CONTEXT_DOCUMENT_ROOT", "SERVER_ADMIN", "SCRIPT_FILENAME");
+	foreach($_SERVER as $key => $value) {
+		if (!in_array($key, $heckno)) {
+			echo "<strong>" . $key . ":</strong> " . $value . "<br/>";
+		}
+	}
 	?>
 	<script>
 	document.write(navigator.userAgent);
@@ -18,7 +23,7 @@ for (var key in window) {
 }
 
 	</script>
-</pre>
+
 <div id="interval">
 	
 </div>
