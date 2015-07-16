@@ -8,14 +8,67 @@
 <body>
 	<div id="wrap">
 		<h1>Proxy Browsers</h1>
-		<ul class="link-list">
-			<li><a href="browser/cdc.html">Chrome Data Compression</a></li>
-			<li><a href="browser/opera-max.html">Opera Max</a></li>
-			<li><a href="browser/opera-mini.html">Opera Mini</a></li>
-			<li><a href="browser/puffin.html">Puffin Browser</a></li>
-			<li><a href="browser/ucbrowser.html">UC Browser</a></li>
-			<li><a href="browser/ucmini.html">UC Mini</a></li>
-		</ul>
+		<table class="striped wide">
+			<thead>
+				<th>Browser</th>
+				<th>Data Savings</th>
+				<th>HTTPS Traffic</th>
+				<th>X-Forwarded-For</th>
+				<th>Cache-control: no-transform</th>
+			</thead>
+			<tbody>
+				<tr>
+					<th><a href="browser/cdc.html">Chrome Data Compression</a></th>
+					<td>50% HTTP only; 27% user session</td>
+					<td>No</td>
+					<td>Yes</td>
+					<td>Yes</td>
+				</tr>
+				<tr>
+					<th><a href="browser/opera-turbo.html">Opera Turbo</a></th>
+					<td>Up to 50%</td>
+					<td>No</td>
+					<td>Yes</td>
+					<td>Unsure</td>
+				</tr>
+				<tr>
+					<th><a href="browser/opera-mini.html">Opera Mini</a></th>
+					<td>Up to 90%</td>
+					<td>No</td>
+					<td>Yes</td>
+					<td>No</td>
+				</tr>
+				<tr>
+					<th><a href="browser/puffin.html">Puffin Browser</a></th>
+					<td>50%</td>
+					<td>Yes</td>
+					<td>Yes</td>
+					<td>No</td>
+				</tr>
+				<tr>
+					<th><a href="browser/ucbrowser.html">UC Browser</a></th>
+					<td>Up to 60%</td>
+					<td>Bypasses proxy</td>
+					<td>Yes</td>
+					<td>Unsure</td>
+				</tr>
+				<tr>
+					<th><a href="browser/ucmini.html">UC Mini</a></th>
+					<td>Up to 90%</td>
+					<td>Yes</td>
+					<td>Yes</td>
+					<td>No</td>
+				</tr>
+				<tr>
+					<th><a href="browser/yandex.html">Yandex Turbo</a></th>
+					<td>??</td>
+					<td>No</td>
+					<td>Yes</td>
+					<td>Yes</td>
+				</tr>
+			</tbody>
+		</table>
+
 	</div>
 </body>
 </html>

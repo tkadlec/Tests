@@ -25,7 +25,7 @@ dl a:hover, ul.link-list a:hover{
 	background: #eee;
 }
 #wrap {
-	max-width: 40em;
+	max-width: 55em;
 	margin: auto;
 }
 dl {
@@ -73,4 +73,7 @@ ul.link-list li{
 }
 .striped tbody > tr:nth-child(odd) > td, .striped tbody > tr:nth-child(odd) > th {
 	background-color: #f9f9f9;
+}
+.wide{
+	overflow-x: scroll;
 }

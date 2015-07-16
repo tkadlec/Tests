@@ -2,20 +2,20 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Opera Turbo</title>
+	<title>Yandex Turbo</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link rel="stylesheet" href="/proxy-browsers/css/style.css">
 </head>
 <body>
 	<div id="wrap">
-		<h1>Opera Max</h1>
-		<p>Opera Max is a proxy service (using Opera Turbo) that focuses on decreasing bandwidth for all apps.</p>
+		<h1>Yandex Turbo</h1>
+		<p>Yandex Turbo mode is based on Opera Turbo and optimizes non-secure traffic.</p>
 		<h2>Summary</h2>
 		<table class="striped">
 			<tbody>
 				<tr>
 					<th>Data Savings</th>
-					<td>Up to 50%</td>
+					<td>???</td>
 				</tr>
 				<tr>
 					<th>HTTPS Behavior</th>
@@ -39,28 +39,30 @@
 				</tr>
 				<tr>
 					<th>Additional Headers</th>
-					<td>HTTP_X_CONTENT_OPTA</td>
+					<td>HTTP_X_CONTENT_OPT, HTTP_X_YANDEX_TURBO, HTTP_X_OPERA_INFO</td>
 				</tr>
 				<tr>
 					<th>Cache-control: no-transform</th>
-					<td>Not sure</td>
+					<td>Yes</td>
 				</tr>
 				<tr>
 					<th>Rendering Behavior</th>
-					<td>N/A</td>
+					<td>Done on Browser</td>
 				</tr>
 				<tr>
 					<th>Rendering Engine</th>
-					<td>N/A</td>
+					<td>Blink</td>
 				</tr>
 			</tbody>
 		</table>
 		<h2>Basic Architecture</h2>
-		<p>When the client makes a request, the request is routed through Opera's servers. The servers initiate each request over their own networks (sending an X-Forwarded-For header) and compresses them.</p>
+		<p>If Turbo Mode is enabled, the client makes a request, the request is routed through Yandex's servers. The servers initiate each request over their own networks (sending an X-Forwarded-For header) and compresses them.</p>
+		<p>Turbo mode is automatically triggered if the connection speed falls below 128 Kbit/s. It will remain on until the speed exceeds 512 Kbit/s. Turbo mode can also be enabled or disabled by the user.</p>
+		<p>With Turbo mode enabled, mutlimedia is hidden by default. </p>
 
 		<h2>Resources</h2>
 		<ul>
-			<li><a href="http://help.opera.com/Windows/12.10/en/turbo.html">Opera Turbo FAQ</a></li>
+			<li><a href="https://help.yandex.com/newbrowser/search-and-browse/turbo.xml">Yandex Turbo Help</a></li>
 		</ul>
 	</div>
 </body>
