@@ -28,7 +28,7 @@ header("Cache-Control: no-transform");
 			blank.innerHTML = blah;
 		}
 		// call it!
-		blah('innerHTML FTW');
+		logIt('innerHTML FTW');
 	</script>
 </body>
 </html>
