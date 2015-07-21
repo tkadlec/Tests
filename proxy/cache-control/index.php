@@ -1,5 +1,6 @@
 <?php
 header("Cache-Control: no-transform");
+?>
 <html>
 <head>
 	<meta charset="UTF-8">
