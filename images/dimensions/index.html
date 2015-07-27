@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <title>Trying to get image dimensions</title>
+        <meta name="viewport" content="width=device-width" />
+        <style>
+            body {
+                font: 100%/1.4em "Helvetica Neue",Helvetica,Arial,sans-serif;
+                color: #404040;
+            }
+            h1{
+                margin: 1.5em 0 ;
+                line-height: 1.3em;
+                border-bottom: 1px dotted #404040;
+            }
+            #results{
+                margin-bottom: 4em;
+                margin-top: 5em;
+            }
+            #wrap {
+                max-width: 40em;
+                margin: auto;
+            }
+            .update{
+                background: #eee;
+                padding: .5em;
+            }
+            img{
+                width: 50%;
+                max-width: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+        <h1>Image Dimensions</h1>
+        <div class="update">
+            <p>Testing <code>image.naturalHeight</code> and <code>image.naturalWidth</code></p>
+        </div>
+        <h2>Test Case</h2>
+        <p>An image is added to the page.</p>
+        <h2>Expected</h2>
+        <p>The naturalHeight should equal 75, naturalWidth should equal 200 and the width and height are variable.</p>
+        <h2>Result</h2>
+        <img src="test1.png" id="blah" onload="imageLoaded();" />
+
+        <div id="results">
+            
+
+        </div>
+        <script>
+            function imageLoaded(){
+                var blah = document.getElementById('blah');
+                var results = document.getElementById('results');
+
+                results.innerHTML += "img.naturalWidth: " + blah.naturalWidth + "<br/>";
+                results.innerHTML += "img.naturalHeight: " + blah.naturalHeight + "<br/>";
+                results.innerHTML += "img.width: " + blah.width + "<br/>";
+                results.innerHTML += "img.height: " + blah.height + "<br/>";
+            }
+            
+        </script>
+    </body>
+</html>
